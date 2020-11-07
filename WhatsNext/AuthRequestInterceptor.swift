@@ -24,7 +24,7 @@ class AuthRequestInterceptor: RequestInterceptor{
       //3
       func retry(
         _ request: Alamofire.Request,
-        for session: Session,
+        for session: Alamofire.Session,
         dueTo error: Error,
         completion: @escaping (RetryResult) -> Void
       ) {
