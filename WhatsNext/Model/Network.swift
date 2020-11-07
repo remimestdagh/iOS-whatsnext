@@ -8,7 +8,7 @@
 import Foundation
 import UberCore
 
-class AccountController {
+class Network {
     static let shared = AccountController()
     let baseURL = URL(string: "http://192.168.1.37:45455/api/")!
     
