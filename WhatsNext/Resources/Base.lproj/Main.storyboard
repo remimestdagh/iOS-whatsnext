@@ -20,15 +20,18 @@
                                 <rect key="frame" x="184" y="483" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSignInButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="yvI-x5-fvb"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-f4-Nbk">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-f4-Nbk">
                                 <rect key="frame" x="159" y="309" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="username" label="Username"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-3J-Svz">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-3J-Svz">
                                 <rect key="frame" x="159" y="401" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="password" label="Password"/>
@@ -40,14 +43,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="joost" destination="L2k-f4-Nbk" id="dJV-Zn-gut"/>
+                        <outlet property="loginButton" destination="kWA-Rl-ofb" id="UFl-qZ-n3n"/>
+                        <outlet property="passwordField" destination="ztd-3J-Svz" id="Vkb-XX-1dG"/>
                         <outlet property="passwordTextField" destination="ztd-3J-Svz" id="kf7-Cn-8PT"/>
                         <outlet property="signInButton" destination="kWA-Rl-ofb" id="kUs-0b-w33"/>
+                        <outlet property="userNameField" destination="L2k-f4-Nbk" id="mHz-Bf-skQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2L-gz-WfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="57"/>
+            <point key="canvasLocation" x="603" y="21"/>
         </scene>
     </scenes>
     <resources>

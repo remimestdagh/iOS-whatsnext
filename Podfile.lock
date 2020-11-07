@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.4.0)
+  - SwiftLint (0.40.3)
   - UberCore (0.13.0)
   - UberRides (0.13.0):
     - UberCore
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - SwiftLint
   - UberRides (~> 0.13)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SwiftLint
     - UberCore
     - UberRides
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   UberCore: 27cd75eff06f70c57897fa3dcec1eb015a8c24ad
   UberRides: 6344d67ed1547b6b66c88f5c15dd659d9028217d
 
-PODFILE CHECKSUM: 6204a7408d82d13b7f68ab7db7d1f80b39e792a7
+PODFILE CHECKSUM: 8afad5d7859d755d2e42cffe6bad114a24feecab
 
 COCOAPODS: 1.10.0

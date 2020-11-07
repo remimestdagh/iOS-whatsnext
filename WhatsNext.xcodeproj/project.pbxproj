@@ -17,10 +17,10 @@
 		E93A60A825517EB800BCB979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93A60A625517EB800BCB979 /* LaunchScreen.storyboard */; };
 		E93A60B325517EB900BCB979 /* WhatsNextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60B225517EB900BCB979 /* WhatsNextTests.swift */; };
 		E93A60BE25517EB900BCB979 /* WhatsNextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */; };
-		E93EE4082556ECE6003133FD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4072556ECE6003133FD /* LoginService.swift */; };
 		E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE40F2556ED28003133FD /* LoginViewController.swift */; };
 		E93EE4152556ED5D003133FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4142556ED5D003133FD /* User.swift */; };
 		E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */; };
+		E9F9830925574B3700313C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9830825574B3700313C9E /* Login.swift */; };
 		ECBCA6380CAAD57CDC4F4F9F /* Pods_WhatsNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E46AECBE5705A065007F4D4 /* Pods_WhatsNext.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,11 +64,11 @@
 		E93A60B925517EB900BCB979 /* WhatsNextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsNextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNextUITests.swift; sourceTree = "<group>"; };
 		E93A60BF25517EB900BCB979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E93EE4072556ECE6003133FD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		E93EE40F2556ED28003133FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E93EE4142556ED5D003133FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E94B0386558C7F2A15A81719 /* Pods-WhatsNextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNextTests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNextTests/Pods-WhatsNextTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestInterceptor.swift; sourceTree = "<group>"; };
+		E9F9830825574B3700313C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 		E93A609A25517EA500BCB979 /* WhatsNext */ = {
 			isa = PBXGroup;
 			children = (
-				E93EE4292556F1EA003133FD /* Supporting Files */,
+				E93A60A925517EB800BCB979 /* Info.plist */,
 				E93A609B25517EA500BCB979 /* AppDelegate.swift */,
 				E93EE4282556F1BF003133FD /* Resources */,
 				E93EE4232556F150003133FD /* Controllers */,
@@ -183,6 +183,7 @@
 				E9005FF62556AEF900527CAB /* Network.swift */,
 				E9005FEA2556AC2D00527CAB /* Film.swift */,
 				E93EE4142556ED5D003133FD /* User.swift */,
+				E9F9830825574B3700313C9E /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,7 +191,6 @@
 		E93EE4062556ECC8003133FD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E93EE4072556ECE6003133FD /* LoginService.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -228,14 +228,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E93EE4292556F1EA003133FD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E93A60A925517EB800BCB979 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +240,7 @@
 				E93A609525517EA500BCB979 /* Frameworks */,
 				E93A609625517EA500BCB979 /* Resources */,
 				B81656C3DD5B254904EA01EB /* [CP] Embed Pods Frameworks */,
+				E9F982E82557479900313C9E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -467,6 +460,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E9F982E82557479900313C9E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -477,10 +487,10 @@
 				E9005FEB2556AC2D00527CAB /* Film.swift in Sources */,
 				E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */,
 				E93A609C25517EA500BCB979 /* AppDelegate.swift in Sources */,
-				E93EE4082556ECE6003133FD /* LoginService.swift in Sources */,
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
+				E9F9830925574B3700313C9E /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
