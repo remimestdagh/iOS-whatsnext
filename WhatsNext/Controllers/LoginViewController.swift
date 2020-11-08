@@ -35,7 +35,9 @@ class LoginViewController: UIViewController {
   
   // MARK: - IBAction
   @IBAction func didTapSignInButton(_ sender: Any) {
+    print("joost")
     let login: Login = Login(email: userNameField.text!, password: passwordField.text!)
     self.network.login(login: login)
+    print("kaas")
   }
 }

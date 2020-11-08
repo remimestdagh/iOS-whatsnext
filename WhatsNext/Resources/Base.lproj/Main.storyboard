@@ -45,8 +45,6 @@
                     <connections>
                         <outlet property="loginButton" destination="kWA-Rl-ofb" id="UFl-qZ-n3n"/>
                         <outlet property="passwordField" destination="ztd-3J-Svz" id="Vkb-XX-1dG"/>
-                        <outlet property="passwordTextField" destination="ztd-3J-Svz" id="kf7-Cn-8PT"/>
-                        <outlet property="signInButton" destination="kWA-Rl-ofb" id="kUs-0b-w33"/>
                         <outlet property="userNameField" destination="L2k-f4-Nbk" id="mHz-Bf-skQ"/>
                     </connections>
                 </viewController>

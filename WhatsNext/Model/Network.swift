@@ -10,6 +10,28 @@ import UberCore
 import Alamofire
 
 class Network {
+    let sessionManager: Session = {
+      let configuration = URLSessionConfiguration.af.default
+      configuration.requestCachePolicy = .returnCacheDataElseLoad
+      let responseCacher = ResponseCacher(behavior: .modify { _, response in
+        let userInfo = ["date": Date()]
+        return CachedURLResponse(
+          response: response.response,
+          data: response.data,
+          userInfo: userInfo,
+          storagePolicy: .allowed)
+      })
+
+      let networkLogger = NetworkLogger()
+      let interceptor = AuthRequestInterceptor()
+
+      return Session(
+        configuration: configuration,
+        interceptor: interceptor,
+        cachedResponseHandler: responseCacher,
+        eventMonitors: [networkLogger])
+    }()
+    
     static let shared = Network()
     let baseURL = URL(string: "http://192.168.1.37:45455/api/")!
 
