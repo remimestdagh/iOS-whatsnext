@@ -24,7 +24,7 @@
                                         <accessibility key="accessibilityConfiguration" hint="username" label="Username"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="BM2-o7-aqc"/>
-                                            <constraint firstAttribute="width" constant="200" id="DLR-sa-uDn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DLR-sa-uDn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -33,7 +33,6 @@
                                         <rect key="frame" x="0.0" y="36" width="200" height="36"/>
                                         <accessibility key="accessibilityConfiguration" hint="password" label="Password"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="2Ip-yO-vqH"/>
                                             <constraint firstAttribute="height" constant="36" id="VJR-KR-Nev"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,7 +42,6 @@
                                         <rect key="frame" x="0.0" y="72" width="200" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="gYK-IH-aCg"/>
-                                            <constraint firstAttribute="width" constant="36" id="hWj-ul-Wbi"/>
                                         </constraints>
                                         <state key="normal" title="Login"/>
                                         <connections>
@@ -52,12 +50,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kWA-Rl-ofb" firstAttribute="top" secondItem="ztd-3J-Svz" secondAttribute="bottom" constant="8" id="CHw-zX-h09"/>
-                                    <constraint firstItem="kWA-Rl-ofb" firstAttribute="top" secondItem="ztd-3J-Svz" secondAttribute="bottom" constant="8" id="PIE-46-zYH"/>
-                                    <constraint firstItem="kWA-Rl-ofb" firstAttribute="bottom" secondItem="ysn-bF-FSN" secondAttribute="bottomMargin" constant="8" id="bc4-PH-lsd"/>
-                                    <constraint firstItem="ztd-3J-Svz" firstAttribute="top" secondItem="L2k-f4-Nbk" secondAttribute="bottom" constant="8" id="g1l-E8-dXT"/>
                                     <constraint firstAttribute="width" constant="200" id="qL7-hI-8v1"/>
-                                    <constraint firstItem="ztd-3J-Svz" firstAttribute="top" secondItem="L2k-f4-Nbk" secondAttribute="bottom" constant="8" id="vZH-Vo-Qfy"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -72,12 +65,12 @@
                         <outlet property="loginButton" destination="kWA-Rl-ofb" id="UFl-qZ-n3n"/>
                         <outlet property="passwordField" destination="ztd-3J-Svz" id="Vkb-XX-1dG"/>
                         <outlet property="userNameField" destination="L2k-f4-Nbk" id="mHz-Bf-skQ"/>
-                        <segue destination="uEu-hy-YBk" kind="show" identifier="toMainScreen" id="RL0-bS-QRK"/>
+                        <segue destination="uEu-hy-YBk" kind="show" identifier="toMainScreen" id="2Ba-TO-BGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2L-gz-WfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="-173"/>
+            <point key="canvasLocation" x="636" y="-279"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xKu-g6-aLz">
@@ -101,7 +94,7 @@
         <!--Root View Controller-->
         <scene sceneID="sJ0-V3-NVD">
             <objects>
-                <tableViewController id="4Q2-7M-woG" sceneMemberID="viewController">
+                <tableViewController id="4Q2-7M-woG" customClass="FilmFavouritesViewController" customModule="WhatsNext" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X12-gZ-1eE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

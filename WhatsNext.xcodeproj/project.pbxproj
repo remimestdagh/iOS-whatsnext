@@ -20,6 +20,8 @@
 		E93A60BE25517EB900BCB979 /* WhatsNextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */; };
 		E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE40F2556ED28003133FD /* LoginViewController.swift */; };
 		E93EE4152556ED5D003133FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4142556ED5D003133FD /* User.swift */; };
+		E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815319255AA9E500933589 /* NetworkRouter.swift */; };
+		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
 		E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */; };
 		E9F9830925574B3700313C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9830825574B3700313C9E /* Login.swift */; };
@@ -70,6 +72,8 @@
 		E93EE40F2556ED28003133FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E93EE4142556ED5D003133FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E94B0386558C7F2A15A81719 /* Pods-WhatsNextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNextTests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNextTests/Pods-WhatsNextTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9815319255AA9E500933589 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestInterceptor.swift; sourceTree = "<group>"; };
 		E9F9830825574B3700313C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -157,7 +161,6 @@
 				E93EE4282556F1BF003133FD /* Resources */,
 				E93EE4232556F150003133FD /* Controllers */,
 				E93EE4222556F14C003133FD /* View */,
-				E93EE4062556ECC8003133FD /* Utility */,
 				E93EE3F92556E990003133FD /* Model */,
 				E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */,
 				E915474425580AE000BAE527 /* NetworkLogger.swift */,
@@ -190,15 +193,9 @@
 				E9005FEA2556AC2D00527CAB /* Film.swift */,
 				E93EE4142556ED5D003133FD /* User.swift */,
 				E9F9830825574B3700313C9E /* Login.swift */,
+				E9815319255AA9E500933589 /* NetworkRouter.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E93EE4062556ECC8003133FD /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		E93EE4222556F14C003133FD /* View */ = {
@@ -213,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				E93EE40F2556ED28003133FD /* LoginViewController.swift */,
+				E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -494,9 +492,11 @@
 				E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */,
 				E93A609C25517EA500BCB979 /* AppDelegate.swift in Sources */,
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
+				E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
+				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
 				E9F9830925574B3700313C9E /* Login.swift in Sources */,
 				E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */,
 			);

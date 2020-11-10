@@ -47,4 +47,13 @@ class Network {
         debugPrint(response)
         }
     }
+    func getFilms(completion: @escaping ([Film])->Void){
+        sessionManager.request(NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self){
+            response in guard let films = response.value else {
+                return completion([])
+            }
+        completion(films)
+        }
+        
+    }
 }

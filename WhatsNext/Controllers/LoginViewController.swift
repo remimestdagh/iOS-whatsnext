@@ -7,7 +7,6 @@
 import UIKit
 import Foundation
 class LoginViewController: UIViewController {
-  
  
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -41,5 +40,6 @@ class LoginViewController: UIViewController {
     self.network.login(login: login)
     print("kaas")
     performSegue(withIdentifier: "toMainScreen", sender: loginButton)
+    
   }
 }
