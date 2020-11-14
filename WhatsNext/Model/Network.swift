@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UberCore
 import Alamofire
 
 class Network {
@@ -31,29 +30,32 @@ class Network {
         cachedResponseHandler: responseCacher,
         eventMonitors: [networkLogger])
     }()
-    
+
     static let shared = Network()
     let baseURL = URL(string: "http://192.168.1.37:45455/api/")!
 
-    let loginO = Login(email: "test@test.test", password: "testPassword")
+    func login(login: Login) {
 
-    func login(login: Login)  {
-        
         AF.request("http://192.168.1.37:45455/api/Account",
     method: .post,
     parameters: login,
-    encoder:JSONParameterEncoder.default).response {
-        response in
+    encoder: JSONParameterEncoder.default).responseString { [self] response in
         debugPrint(response)
+        self.saveAccessCode(accessCode: response.value!)
         }
+
     }
-    func getFilms(completion: @escaping ([Film])->Void){
-        sessionManager.request(NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self){
+    func saveAccessCode(accessCode: String) {
+        TokenManager.shared.saveAccessToken(authToken: accessCode)
+        }
+    func getFilms(completion: @escaping ([Film]) -> Void) {
+        sessionManager.request(
+            NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self) {
             response in guard let films = response.value else {
-                return completion([])
+return completion([])
             }
         completion(films)
         }
-        
+
     }
 }

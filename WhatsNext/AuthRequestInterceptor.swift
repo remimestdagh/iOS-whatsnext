@@ -4,7 +4,6 @@
 //
 //  Created by remi mestdagh on 07/11/2020.
 import Alamofire
-import UberCore
 
 class AuthRequestInterceptor: RequestInterceptor {
   //1
@@ -17,8 +16,8 @@ class AuthRequestInterceptor: RequestInterceptor {
     completion: @escaping (Result<URLRequest, Error>) -> Void
   ) {
     var urlRequest = urlRequest
-    if let token = TokenManager.fetchToken() {
-      urlRequest.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+    if let token = TokenManager.shared.fetchAccessToken() {
+      urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
     completion(.success(urlRequest))
   }

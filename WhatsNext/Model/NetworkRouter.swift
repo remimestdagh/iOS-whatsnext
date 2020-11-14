@@ -11,9 +11,9 @@ import Alamofire
 enum NetworkRouter {
     case fetchFavourites
     case login
-    
-    var baseURL:String { return "http://192.168.1.37:45455/api/"}
-    
+
+    var baseURL: String { return "http://192.168.1.37:45455/api/" }
+
     var path: String {
         switch self {
         case .fetchFavourites:
@@ -22,35 +22,34 @@ enum NetworkRouter {
         return "Account"
         }
     }
-    var method:HTTPMethod {
+    var method: HTTPMethod {
         switch self {
         case .fetchFavourites:
             return .get
         case .login:
             return .post
-            
+
         }
     }
     var parameters: [String: String]? {
       switch self {
       case .fetchFavourites:
-        return ["":""]
+        return ["": ""]
       case .login:
         return [
-            "email":"student@hogent.be",
-            "password":"P@ssword123"
-        
+            "email": "student@hogent.be",
+            "password": "P@ssword123"
+
         ]
-        
+
       }
     }
-    
-    
+
 }
 extension NetworkRouter: URLRequestConvertible {
   func asURLRequest() throws -> URLRequest {
-    let url = try baseURL.asURL().appendingPathComponent(path)
-    var request = URLRequest(url: url)
+    let newUrl = try baseURL.asURL().appendingPathComponent(path)
+    var request = URLRequest(url: newUrl)
     request.method = method
     if method == .get {
       request = try URLEncodedFormParameterEncoder()

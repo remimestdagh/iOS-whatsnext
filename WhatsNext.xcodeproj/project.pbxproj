@@ -20,6 +20,10 @@
 		E93A60BE25517EB900BCB979 /* WhatsNextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */; };
 		E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE40F2556ED28003133FD /* LoginViewController.swift */; };
 		E93EE4152556ED5D003133FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4142556ED5D003133FD /* User.swift */; };
+		E95A713E25604541001B16F5 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A713D25604541001B16F5 /* TokenManager.swift */; };
+		E95A71502560462D001B16F5 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714E2560462C001B16F5 /* SecureStore.swift */; };
+		E95A71512560462D001B16F5 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714D2560462C001B16F5 /* SecureStoreError.swift */; };
+		E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714F2560462D001B16F5 /* SecureStoreQueryable.swift */; };
 		E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815319255AA9E500933589 /* NetworkRouter.swift */; };
 		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
@@ -72,6 +76,10 @@
 		E93EE40F2556ED28003133FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E93EE4142556ED5D003133FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E94B0386558C7F2A15A81719 /* Pods-WhatsNextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNextTests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNextTests/Pods-WhatsNextTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E95A713D25604541001B16F5 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		E95A714D2560462C001B16F5 /* SecureStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
+		E95A714E2560462C001B16F5 /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		E95A714F2560462D001B16F5 /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		E9815319255AA9E500933589 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 		E93A609A25517EA500BCB979 /* WhatsNext */ = {
 			isa = PBXGroup;
 			children = (
+				E95A715925604637001B16F5 /* SecureStore */,
 				E93A60A925517EB800BCB979 /* Info.plist */,
 				E93A609B25517EA500BCB979 /* AppDelegate.swift */,
 				E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */,
@@ -189,6 +198,7 @@
 		E93EE3F92556E990003133FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E95A713D25604541001B16F5 /* TokenManager.swift */,
 				E9005FF62556AEF900527CAB /* Network.swift */,
 				E9005FEA2556AC2D00527CAB /* Film.swift */,
 				E93EE4142556ED5D003133FD /* User.swift */,
@@ -230,6 +240,16 @@
 				E93A60A425517EB800BCB979 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E95A715925604637001B16F5 /* SecureStore */ = {
+			isa = PBXGroup;
+			children = (
+				E95A714E2560462C001B16F5 /* SecureStore.swift */,
+				E95A714D2560462C001B16F5 /* SecureStoreError.swift */,
+				E95A714F2560462D001B16F5 /* SecureStoreQueryable.swift */,
+			);
+			path = SecureStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -491,14 +511,18 @@
 				E9005FEB2556AC2D00527CAB /* Film.swift in Sources */,
 				E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */,
 				E93A609C25517EA500BCB979 /* AppDelegate.swift in Sources */,
+				E95A71512560462D001B16F5 /* SecureStoreError.swift in Sources */,
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
 				E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
+				E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */,
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
+				E95A713E25604541001B16F5 /* TokenManager.swift in Sources */,
 				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
 				E9F9830925574B3700313C9E /* Login.swift in Sources */,
 				E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */,
+				E95A71502560462D001B16F5 /* SecureStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,19 +7,18 @@
 
 import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-  
-    var window: UIWindow?
 
+    var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard (scene as? UIWindowScene) != nil else { return }
-        
+
         // add these lines
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
+
             // if user is logged in before
         if UserDefaults.standard.bool(forKey: "isLoggedIn") == true {
                 // instantiate the main tab bar controller and set it as root view controller
@@ -57,12 +56,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-    func changeRootViewController(_ vc:UIViewController, animated: Bool=true){
+
+    func changeRootViewController(_ viewc: UIViewController, animated: Bool = true) {
         guard let window = self.window else {
                 return
             }
-            window.rootViewController = vc
+            window.rootViewController = viewc
         UIView.transition(with: window,
                               duration: 0.5,
                               options: [.transitionFlipFromLeft],
