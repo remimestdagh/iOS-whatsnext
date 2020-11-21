@@ -80,62 +80,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYY-se-xjl">
-                                <rect key="frame" x="87" y="403" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-AQ-TzB">
+                                <rect key="frame" x="57" y="210.5" width="300" height="502"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-28-Pi6" userLabel="Film Name">
-                                        <rect key="frame" x="99" y="53" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYe-Q5-Ldb">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-Lu-XKG">
+                                        <rect key="frame" x="0.0" y="70" width="300" height="250"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-28-Pi6" userLabel="Film Name">
+                                        <rect key="frame" x="0.0" y="340" width="300" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="eif-Ns-hrF">
-                                <rect key="frame" x="56" y="612" width="303" height="54"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rewind" translatesAutoresizingMaskIntoConstraints="NO" id="aw4-st-6uM">
-                                        <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="VTT-cp-m5H"/>
-                                            <constraint firstAttribute="height" constant="54" id="xwu-qN-wCH"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Like" translatesAutoresizingMaskIntoConstraints="NO" id="R54-n0-WjA">
-                                        <rect key="frame" x="83" y="0.0" width="54" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="64S-tk-Hji"/>
-                                            <constraint firstAttribute="height" constant="54" id="FPA-vD-WVO"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Super Like" translatesAutoresizingMaskIntoConstraints="NO" id="hXu-0r-wOq">
-                                        <rect key="frame" x="166" y="0.0" width="54" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="NeP-WV-lgF"/>
-                                            <constraint firstAttribute="width" constant="54" id="Vgm-0L-XP6"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nope" translatesAutoresizingMaskIntoConstraints="NO" id="Ajq-QY-OZ0">
-                                        <rect key="frame" x="249" y="0.0" width="54" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="4RG-MA-K9M"/>
-                                            <constraint firstAttribute="height" constant="54" id="6dU-8u-ipY"/>
-                                        </constraints>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-Yj-oyJ" userLabel="IMDB Score">
+                                        <rect key="frame" x="0.0" y="380.5" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="eif-Ns-hrF">
+                                        <rect key="frame" x="0.0" y="421" width="300" height="81"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rewind" translatesAutoresizingMaskIntoConstraints="NO" id="aw4-st-6uM">
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aw4-st-6uM" secondAttribute="height" multiplier="1:1" id="TdM-nx-DEn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Like" translatesAutoresizingMaskIntoConstraints="NO" id="R54-n0-WjA">
+                                                <rect key="frame" x="109.5" y="0.0" width="81" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="R54-n0-WjA" secondAttribute="height" multiplier="1:1" id="1at-iH-kgC"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nope" translatesAutoresizingMaskIntoConstraints="NO" id="Ajq-QY-OZ0">
+                                                <rect key="frame" x="219.5" y="0.0" width="80.5" height="81"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Ajq-QY-OZ0" secondAttribute="height" multiplier="1:1" id="I5z-mW-HCc"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-Lu-XKG">
-                                <rect key="frame" x="124" y="156" width="166" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgR-At-pPC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wq8-AQ-TzB" firstAttribute="centerX" secondItem="t7I-OX-BfG" secondAttribute="centerX" id="0DZ-ul-OtM"/>
+                            <constraint firstItem="Wq8-AQ-TzB" firstAttribute="centerY" secondItem="t7I-OX-BfG" secondAttribute="centerY" id="EFS-FV-HUm"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="TYz-I3-d6V"/>
+                    <connections>
+                        <outlet property="IVDislike" destination="Ajq-QY-OZ0" id="rRC-I4-OuH"/>
+                        <outlet property="IVLike" destination="R54-n0-WjA" id="RFM-50-wzq"/>
+                        <outlet property="IVMessage" destination="ZYe-Q5-Ldb" id="x85-97-IMs"/>
+                        <outlet property="IVPoster" destination="XsW-Lu-XKG" id="hIM-qL-NHv"/>
+                        <outlet property="LBLFilmTitle" destination="f7i-28-Pi6" id="AJg-Sp-XOj"/>
+                        <outlet property="LBLScore" destination="K0K-Yj-oyJ" id="cWu-MU-xMG"/>
+                        <outlet property="mainStackView" destination="Wq8-AQ-TzB" id="yCa-VB-4sx"/>
+                        <outlet property="view" destination="t7I-OX-BfG" id="3Vu-XH-Ai4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zM-hU-X45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,7 +237,6 @@
         <image name="Like" width="54" height="54"/>
         <image name="Nope" width="54" height="54"/>
         <image name="Rewind" width="44" height="44"/>
-        <image name="Super Like" width="44" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
