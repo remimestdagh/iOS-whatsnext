@@ -11,15 +11,18 @@ import Alamofire
 enum NetworkRouter {
     case fetchFavourites
     case login
+    case getNextFilms(String)
 
     var baseURL: String { return "http://192.168.1.37:45455/api/" }
 
     var path: String {
         switch self {
         case .fetchFavourites:
-            return "Film/GetFavourites"
+            return "Films/GetFavourites"
         case .login:
         return "Account"
+        case .getNextFilms:
+            return "Films/GetNextFilms"
         }
     }
     var method: HTTPMethod {
@@ -28,6 +31,8 @@ enum NetworkRouter {
             return .get
         case .login:
             return .post
+        case .getNextFilms:
+            return .get
 
         }
     }
@@ -41,6 +46,8 @@ enum NetworkRouter {
             "password": "P@ssword123"
 
         ]
+      case .getNextFilms(let skip):
+        return ["skip": skip]
 
       }
     }

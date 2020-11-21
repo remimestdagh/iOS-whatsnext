@@ -48,7 +48,7 @@ class Network {
     func saveAccessCode(accessCode: String) {
         TokenManager.shared.saveAccessToken(authToken: accessCode)
         }
-    func getFilms(completion: @escaping ([Film]) -> Void) {
+    func getFavouriteFilms(completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
             NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self) {
             response in guard let films = response.value else {
@@ -58,4 +58,14 @@ return completion([])
         }
 
     }
+    func getNextFilms(skip:String,completion: @escaping ([Film])-> Void) {
+        sessionManager.request(
+            NetworkRouter.getNextFilms(skip) as
+                URLRequestConvertible).responseDecodable(of: [Film].self){
+                    response in guard let films = response.value else {
+                        return completion([])
+                }
+                completion(films)
+    }
+}
 }
