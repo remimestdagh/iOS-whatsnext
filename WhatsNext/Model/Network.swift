@@ -60,14 +60,14 @@ class Network {
     func getNextFilms(skip: String, completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
             NetworkRouter.getNextFilms(skip) as
-                URLRequestConvertible).responseDecodable(of: Films.self) { response in
+                URLRequestConvertible).responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
                         print("mislukt")
                         return completion([])
                     }
                     print("gelukt")
-                    completion(films.items)
+                    completion(films)
 
 
 
