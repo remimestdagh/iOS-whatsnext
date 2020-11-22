@@ -39,7 +39,7 @@ enum NetworkRouter {
     var parameters: [String: String]? {
       switch self {
       case .fetchFavourites:
-        return ["": ""]
+        return nil
       case .login:
         return [
             "email": "student@hogent.be",
@@ -59,6 +59,7 @@ extension NetworkRouter: URLRequestConvertible {
     var request = URLRequest(url: newUrl)
     request.method = method
     if method == .get {
+        
       request = try URLEncodedFormParameterEncoder()
         .encode(parameters, into: request)
     } else if method == .post {

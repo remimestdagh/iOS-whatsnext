@@ -21,6 +21,7 @@
 		E93A60BE25517EB900BCB979 /* WhatsNextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */; };
 		E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE40F2556ED28003133FD /* LoginViewController.swift */; };
 		E93EE4152556ED5D003133FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4142556ED5D003133FD /* User.swift */; };
+		E9460EC4256A9590001B631C /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9460EC3256A9590001B631C /* Films.swift */; };
 		E95A713E25604541001B16F5 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A713D25604541001B16F5 /* TokenManager.swift */; };
 		E95A71502560462D001B16F5 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714E2560462C001B16F5 /* SecureStore.swift */; };
 		E95A71512560462D001B16F5 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714D2560462C001B16F5 /* SecureStoreError.swift */; };
@@ -77,6 +78,7 @@
 		E93A60BF25517EB900BCB979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E93EE40F2556ED28003133FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E93EE4142556ED5D003133FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9460EC3256A9590001B631C /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		E94B0386558C7F2A15A81719 /* Pods-WhatsNextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNextTests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNextTests/Pods-WhatsNextTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E95A713D25604541001B16F5 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		E95A714D2560462C001B16F5 /* SecureStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				E93EE4142556ED5D003133FD /* User.swift */,
 				E9F9830825574B3700313C9E /* Login.swift */,
 				E9815319255AA9E500933589 /* NetworkRouter.swift */,
+				E9460EC3256A9590001B631C /* Films.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
 				E95A713E25604541001B16F5 /* TokenManager.swift in Sources */,
 				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
+				E9460EC4256A9590001B631C /* Films.swift in Sources */,
 				E9F9830925574B3700313C9E /* Login.swift in Sources */,
 				E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */,
 				E95A71502560462D001B16F5 /* SecureStore.swift in Sources */,

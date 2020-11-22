@@ -17,23 +17,38 @@ class FilmCardViewController: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var IVMessage: UIImageView!
     var films: [Film] = []
-
+    var currentFilm: Film?
     //methods
+    override func viewWillAppear(_ animated: Bool) {
+        self.getNextFilms(skip: "0")
+        if currentFilm != nil {
+            print(currentFilm?.titel ?? "default")
+        }
+        super.viewWillAppear(animated)
+    }
+    func getNextFilms(skip: String) {
+        Network.shared.getNextFilms(skip: skip) { [self] films in
+            self.films = films
+            print(films.count)
+            print(self.films.count)
+
+        }
+    }
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
 
-
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeGesture(gestureRecognizer: )))
 
         IVPoster.addGestureRecognizer(swipeGesture)
+
     }
 
-    @objc func swipeGesture(gestureRecognizer: UIPanGestureRecognizer){
-        let labelPoint =  gestureRecognizer.translation(in: view)
+    @objc func swipeGesture(gestureRecognizer: UIPanGestureRecognizer) { let labelPoint =
+        gestureRecognizer.translation(in: view)
 
-        IVPoster.center = CGPoint(x: view.bounds.width/2 + labelPoint.x , y:  view.bounds.height/2 + labelPoint.y)
+        IVPoster.center = CGPoint(x: view.bounds.width/2 + labelPoint.x, y: view.bounds.height/2 + labelPoint.y)
 
         // set up the the positon and the CGAffineTransform
         let xFromCenter = view.bounds.width / 2 - IVPoster.center.x
@@ -45,19 +60,9 @@ class FilmCardViewController: UIViewController {
         var scaleAndRotated = rotation.scaledBy(x: scale, y: scale)
 
         IVPoster.transform = scaleAndRotated
-
-
-
-        if gestureRecognizer.state == .ended{
-
-
+        if gestureRecognizer.state == .ended {
             // deal with the accpeted and rejected
             var acceptedORrejected = ""
-
-
-
-
-
             if IVPoster.center.x < (view.bounds.width / 2 - 100) {
                 print("no Interested")
                 self.IVMessage.isHidden = false
@@ -70,13 +75,6 @@ class FilmCardViewController: UIViewController {
                 IVMessage.image = UIImage(named: "LikeSign")
                 acceptedORrejected = "accepted"
             }
-
-
-
-
-
-
-
             // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)
 
@@ -88,16 +86,4 @@ class FilmCardViewController: UIViewController {
         }
 
     }
-
-
-    func getNextFilms() {
-        Network.shared.getNextFilms(skip: "100") {
-            [self] films in
-            self.films = films
-            print(films)
-
-        }
-    }
-
-
 }

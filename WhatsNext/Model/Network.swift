@@ -50,22 +50,27 @@ class Network {
         }
     func getFavouriteFilms(completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
-            NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self) {
-            response in guard let films = response.value else {
-return completion([])
+            NetworkRouter.fetchFavourites).responseDecodable(of: [Film].self) {
+            response in guard let films = response.value else { return completion([])
             }
         completion(films)
         }
 
     }
-    func getNextFilms(skip:String,completion: @escaping ([Film])-> Void) {
+    func getNextFilms(skip: String, completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
             NetworkRouter.getNextFilms(skip) as
-                URLRequestConvertible).responseDecodable(of: [Film].self){
-                    response in guard let films = response.value else {
+                URLRequestConvertible).responseDecodable(of: Films.self) { response in
+                    guard let films = response.value
+                    else {
+                        print("mislukt")
                         return completion([])
-                }
-                completion(films)
+                    }
+                    print("gelukt")
+                    completion(films.items)
+
+
+
     }
 }
 }
