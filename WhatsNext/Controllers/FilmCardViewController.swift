@@ -16,6 +16,8 @@ class FilmCardViewController: UIViewController {
     @IBOutlet weak var IVDislike: UIImageView!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var IVMessage: UIImageView!
+    @IBOutlet weak var SwipeView: UIView!
+    var currentIndex: Int = 0
     var films: [Film] = []
     var currentFilm: Film?
     //methods
@@ -36,7 +38,10 @@ class FilmCardViewController: UIViewController {
             //todo check for empty
             if(!films.isEmpty) {
                 self.currentFilm = films[0]
+                self.currentIndex+=1
                 setImage(from: self.currentFilm!.titleImage)
+                LBLFilmTitle.text=self.currentFilm?.titel
+                LBLScore.text = self.currentFilm?.regisseur
 
             }
 
@@ -62,7 +67,7 @@ class FilmCardViewController: UIViewController {
 
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeGesture(gestureRecognizer: )))
 
-        IVPoster.addGestureRecognizer(swipeGesture)
+        self.SwipeView.addGestureRecognizer(swipeGesture)
         print(films.count)
 
     }
@@ -70,10 +75,10 @@ class FilmCardViewController: UIViewController {
     @objc func swipeGesture(gestureRecognizer: UIPanGestureRecognizer) { let labelPoint =
         gestureRecognizer.translation(in: view)
 
-        IVPoster.center = CGPoint(x: view.bounds.width/2 + labelPoint.x, y: view.bounds.height/2 + labelPoint.y)
+        SwipeView.center = CGPoint(x: view.bounds.width/2 + labelPoint.x, y: view.bounds.height/2 + labelPoint.y)
 
         // set up the the positon and the CGAffineTransform
-        let xFromCenter = view.bounds.width / 2 - IVPoster.center.x
+        let xFromCenter = view.bounds.width / 2 - SwipeView.center.x
 
         var rotation = CGAffineTransform(rotationAngle: xFromCenter/200)
 
@@ -81,27 +86,42 @@ class FilmCardViewController: UIViewController {
 
         var scaleAndRotated = rotation.scaledBy(x: scale, y: scale)
 
-        IVPoster.transform = scaleAndRotated
+        SwipeView.transform = scaleAndRotated
         if gestureRecognizer.state == .ended {
-            if IVPoster.center.x < (view.bounds.width / 2 - 100) {
+            if SwipeView.center.x < (view.bounds.width / 2 - 100) {
                 print("no Interested")
                 self.IVMessage.isHidden = false
-                IVMessage.image = UIImage(named: "NopeSign")
+                self.IVMessage.image = UIImage(named: "NopeSign")
             }
-            if IVPoster.center.x > (view.bounds.width / 2 + 100) {
+            if SwipeView.center.x > (view.bounds.width / 2 + 100) {
                 print("Interested")
                 self.IVMessage.isHidden = false
-                IVMessage.image = UIImage(named: "LikeSign")
+                self.IVMessage.image = UIImage(named: "LikeSign")
             }
             // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)
 
             scaleAndRotated = rotation.scaledBy(x: 1, y: 1)
 
-            IVPoster.transform = scaleAndRotated
+            SwipeView.transform = scaleAndRotated
 
-            IVPoster.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
+            SwipeView.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
+            nextFilm()
         }
 
     }
+    func nextFilm() {
+        hideImageAfterTime(time: 2, imageView: self.IVMessage)
+        self.currentIndex+=1
+        self.IVMessage.isHidden = false
+        self.currentFilm = self.films[self.currentIndex+1]
+        self.LBLFilmTitle.text = self.currentFilm?.titel
+        self.LBLScore.text = self.currentFilm?.regisseur
+        setImage(from: self.currentFilm!.titleImage)
+    }
+    func hideImageAfterTime(time: CFTimeInterval, imageView: UIImageView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + time) {
+          imageView.isHidden = true
+        }
+      }
 }
