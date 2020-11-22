@@ -20,19 +20,40 @@ class FilmCardViewController: UIViewController {
     var currentFilm: Film?
     //methods
     override func viewWillAppear(_ animated: Bool) {
-        self.getNextFilms(skip: "0")
-        if currentFilm != nil {
-            print(currentFilm?.titel ?? "default")
-        }
         super.viewWillAppear(animated)
+        self.getNextFilms(skip: "0")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
+      //  self.currentFilm = self.films[0]
+        //setImage(from: currentFilm!.titleImage)
+        super.viewDidAppear(animated)
     }
     func getNextFilms(skip: String) {
         Network.shared.getNextFilms(skip: skip) { [self] films in
             self.films = films
-            print(films.count)
-            print(self.films.count)
+            //todo check for empty
+            if(!films.isEmpty) {
+                self.currentFilm = films[0]
+                setImage(from: self.currentFilm!.titleImage)
+
+            }
 
         }
+    }
+
+    func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.IVPoster.image = image
+            }
+        }
+
     }
 
     override func viewDidLoad() {
@@ -42,6 +63,7 @@ class FilmCardViewController: UIViewController {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeGesture(gestureRecognizer: )))
 
         IVPoster.addGestureRecognizer(swipeGesture)
+        print(films.count)
 
     }
 
@@ -61,19 +83,15 @@ class FilmCardViewController: UIViewController {
 
         IVPoster.transform = scaleAndRotated
         if gestureRecognizer.state == .ended {
-            // deal with the accpeted and rejected
-            var acceptedORrejected = ""
             if IVPoster.center.x < (view.bounds.width / 2 - 100) {
                 print("no Interested")
                 self.IVMessage.isHidden = false
                 IVMessage.image = UIImage(named: "NopeSign")
-                acceptedORrejected = "rejected"
             }
             if IVPoster.center.x > (view.bounds.width / 2 + 100) {
                 print("Interested")
                 self.IVMessage.isHidden = false
                 IVMessage.image = UIImage(named: "LikeSign")
-                acceptedORrejected = "accepted"
             }
             // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)

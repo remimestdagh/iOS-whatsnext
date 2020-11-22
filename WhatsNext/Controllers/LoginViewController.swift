@@ -27,8 +27,6 @@ class LoginViewController: UIViewController {
 
   private func initializeData() {
 
-    /// Delegate the protocol
-    //viewModel.delegate = self
   }
 
   // MARK: - IBAction
@@ -36,7 +34,7 @@ class LoginViewController: UIViewController {
     print("joost")
     let login: Login = Login(email: userNameField.text!, password: passwordField.text!)
     self.network.login(login: login)
-    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+    //UserDefaults.standard.set(true, forKey: "isLoggedIn")
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
 

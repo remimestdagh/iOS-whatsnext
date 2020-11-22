@@ -41,7 +41,7 @@ class Network {
     parameters: login,
     encoder: JSONParameterEncoder.default).responseString { [self] response in
         debugPrint(response)
-        self.saveAccessCode(accessCode: response.value!)
+        self.saveAccessCode(accessCode: response.value ?? "")
         }
 
     }
@@ -50,10 +50,14 @@ class Network {
         }
     func getFavouriteFilms(completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
-            NetworkRouter.fetchFavourites).responseDecodable(of: [Film].self) {
-            response in guard let films = response.value else { return completion([])
+            NetworkRouter.fetchFavourites).responseDecodable(of: [Film].self) { response in
+                guard let films = response.value
+                else {
+                    print("mislukt")
+                    return completion([])
             }
-        completion(films)
+                print("gelukt")
+                completion(films)
         }
 
     }
@@ -68,9 +72,6 @@ class Network {
                     }
                     print("gelukt")
                     completion(films)
-
-
-
     }
-}
+  }
 }

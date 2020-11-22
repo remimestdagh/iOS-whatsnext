@@ -29,7 +29,7 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
-
+import Foundation
 class TokenManager {
   let userAccount = "accessToken"
   static let shared = TokenManager()
@@ -40,6 +40,12 @@ class TokenManager {
   }()
 
   func saveAccessToken(authToken: String) {
+    if(authToken==""){
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+    }
+    else{
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+    }
     do {
       try secureStore.setValue(authToken, for: userAccount)
     } catch let exception {

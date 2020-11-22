@@ -59,7 +59,6 @@ extension NetworkRouter: URLRequestConvertible {
     var request = URLRequest(url: newUrl)
     request.method = method
     if method == .get {
-        
       request = try URLEncodedFormParameterEncoder()
         .encode(parameters, into: request)
     } else if method == .post {
