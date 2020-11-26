@@ -16,6 +16,7 @@ struct Film {
     var score: Int
     var titleImage: String
     var runtime: Int
+    var description: String
 
     enum CodingKeys: String, CodingKey {
 
@@ -26,6 +27,7 @@ struct Film {
         case score
         case titleImage
         case runtime
+        case description
     }
 }
 extension Film: Decodable {
@@ -38,6 +40,7 @@ extension Film: Decodable {
         score = try container.decode(Int.self, forKey: .score)
         titleImage = try container.decode(String.self, forKey: .titleImage)
         runtime = try container.decode(Int.self, forKey: .runtime)
+        description = try container.decode(String.self, forKey: .description)
     }
 
 }

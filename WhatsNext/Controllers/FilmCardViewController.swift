@@ -16,6 +16,7 @@ class FilmCardViewController: UIViewController {
     @IBOutlet weak var IVDislike: UIImageView!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var IVMessage: UIImageView!
+    @IBOutlet weak var LBLDescription: UITextView!
     @IBOutlet weak var SwipeView: UIView!
     var currentIndex: Int = 0
     var films: [Film] = []
@@ -42,6 +43,7 @@ class FilmCardViewController: UIViewController {
                 setImage(from: self.currentFilm!.titleImage)
                 LBLFilmTitle.text=self.currentFilm?.titel
                 LBLScore.text = self.currentFilm?.regisseur
+                LBLDescription.text = self.currentFilm?.description
 
             }
 
@@ -110,6 +112,7 @@ class FilmCardViewController: UIViewController {
         }
 
     }
+    ///called after swipe, prepares view for next film
     func nextFilm() {
         hideImageAfterTime(time: 2, imageView: self.IVMessage)
         self.currentIndex+=1
@@ -117,8 +120,10 @@ class FilmCardViewController: UIViewController {
         self.currentFilm = self.films[self.currentIndex+1]
         self.LBLFilmTitle.text = self.currentFilm?.titel
         self.LBLScore.text = self.currentFilm?.regisseur
+        self.LBLDescription.text = self.currentFilm?.description
         setImage(from: self.currentFilm!.titleImage)
     }
+    ///hides message image after indicated time in seconds
     func hideImageAfterTime(time: CFTimeInterval, imageView: UIImageView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + time) {
           imageView.isHidden = true

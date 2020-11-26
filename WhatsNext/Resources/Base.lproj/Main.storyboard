@@ -84,29 +84,37 @@
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="center" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-AQ-TzB">
-                                        <rect key="frame" x="-30" y="-187" width="300" height="501.5"/>
+                                    <stackView opaque="NO" contentMode="center" fixedFrame="YES" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-AQ-TzB">
+                                        <rect key="frame" x="-30" y="-326" width="300" height="549.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYe-Q5-Ldb">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-Lu-XKG">
-                                                <rect key="frame" x="0.0" y="70" width="300" height="250"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-28-Pi6" userLabel="Film Name">
-                                                <rect key="frame" x="0.0" y="340" width="300" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="257" width="300" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-Yj-oyJ" userLabel="IMDB Score">
-                                                <rect key="frame" x="0.0" y="380.5" width="300" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="284.5" width="300" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-0U-vDv">
+                                                <rect key="frame" x="0.0" y="312" width="300" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="ATJ-7m-Prv"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="eif-Ns-hrF">
-                                                <rect key="frame" x="0.0" y="421" width="300" height="80.5"/>
+                                                <rect key="frame" x="0.0" y="469" width="300" height="80.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rewind" translatesAutoresizingMaskIntoConstraints="NO" id="aw4-st-6uM">
                                                         <rect key="frame" x="0.0" y="0.0" width="80.5" height="80.5"/>
@@ -130,6 +138,10 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYe-Q5-Ldb">
+                                        <rect key="frame" x="-30" y="39" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -137,12 +149,13 @@
                         <viewLayoutGuide key="safeArea" id="JgR-At-pPC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="TYz-I3-d6V"/>
+                    <tabBarItem key="tabBarItem" title="Swipe" id="TYz-I3-d6V" userLabel="Swipe"/>
                     <connections>
                         <outlet property="IVDislike" destination="Ajq-QY-OZ0" id="rRC-I4-OuH"/>
                         <outlet property="IVLike" destination="R54-n0-WjA" id="RFM-50-wzq"/>
                         <outlet property="IVMessage" destination="ZYe-Q5-Ldb" id="x85-97-IMs"/>
                         <outlet property="IVPoster" destination="XsW-Lu-XKG" id="hIM-qL-NHv"/>
+                        <outlet property="LBLDescription" destination="g2e-0U-vDv" id="vMd-fP-PMX"/>
                         <outlet property="LBLFilmTitle" destination="f7i-28-Pi6" id="AJg-Sp-XOj"/>
                         <outlet property="LBLScore" destination="K0K-Yj-oyJ" id="cWu-MU-xMG"/>
                         <outlet property="SwipeView" destination="HYV-bJ-O9p" id="whE-qs-pm2"/>
@@ -257,6 +270,9 @@
         <image name="Like" width="54" height="54"/>
         <image name="Nope" width="54" height="54"/>
         <image name="Rewind" width="44" height="44"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
