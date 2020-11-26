@@ -99,6 +99,7 @@ class FilmCardViewController: UIViewController {
                 print("Interested")
                 self.IVMessage.isHidden = false
                 self.IVMessage.image = UIImage(named: "LikeSign")
+                Network.shared.addToWatchlist(id: String.init(currentFilm!.id))
             }
             // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)

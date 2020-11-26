@@ -12,6 +12,8 @@ enum NetworkRouter {
     case fetchFavourites
     case login
     case getNextFilms(String)
+    case addToWatchlist(String)
+    case addToWatched(String)
 
     var baseURL: String { return "http://192.168.1.37:45455/api/" }
 
@@ -23,7 +25,12 @@ enum NetworkRouter {
         return "Account"
         case .getNextFilms:
             return "Films/GetNextFilms"
+        case .addToWatchlist(let id):
+            return "Films/AddToWatchlist/\(id)"
+        case .addToWatched(let id):
+            return "Films/AddToWatched/\(id)"
         }
+
     }
     var method: HTTPMethod {
         switch self {
@@ -33,6 +40,10 @@ enum NetworkRouter {
             return .post
         case .getNextFilms:
             return .get
+        case .addToWatched:
+            return .post
+        case .addToWatchlist:
+            return .post
 
         }
     }
@@ -48,6 +59,10 @@ enum NetworkRouter {
         ]
       case .getNextFilms(let skip):
         return ["skip": skip]
+      case .addToWatched:
+        return nil
+      case .addToWatchlist(let id):
+        return ["id": id]
 
       }
     }

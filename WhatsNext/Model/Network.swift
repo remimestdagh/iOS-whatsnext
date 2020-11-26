@@ -74,4 +74,14 @@ class Network {
                     completion(films)
     }
   }
+
+    func addToWatchlist(id: String) {
+        sessionManager.request(
+            NetworkRouter.addToWatchlist(id) as
+                URLRequestConvertible).resume()
+                }
+    func addToWatched(id: String) {
+        sessionManager.request(NetworkRouter.addToWatched(id) as URLRequestConvertible
+        )
+    }
 }
