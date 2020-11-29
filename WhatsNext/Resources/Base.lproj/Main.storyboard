@@ -16,49 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
-                                <rect key="frame" x="107" y="394" width="200" height="108"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundlogin" translatesAutoresizingMaskIntoConstraints="NO" id="jlE-3w-smC" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
+                                <rect key="frame" x="107" y="388" width="200" height="120"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-f4-Nbk">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <accessibility key="accessibilityConfiguration" hint="username" label="Username"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="BM2-o7-aqc"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DLR-sa-uDn"/>
+                                            <constraint firstAttribute="height" constant="36" id="je2-Jo-Ggv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-3J-Svz">
-                                        <rect key="frame" x="0.0" y="36" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="42" width="200" height="36"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <accessibility key="accessibilityConfiguration" hint="password" label="Password"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="VJR-KR-Nev"/>
+                                            <constraint firstAttribute="height" constant="36" id="yoI-lh-g0M"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWA-Rl-ofb">
-                                        <rect key="frame" x="0.0" y="72" width="200" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="gYK-IH-aCg"/>
-                                        </constraints>
-                                        <state key="normal" title="Login"/>
+                                        <rect key="frame" x="0.0" y="84" width="200" height="36"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.50435507300000004" green="0.00092524057250000001" blue="0.031329050660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
                                         <connections>
                                             <action selector="didTapSignInButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="yvI-x5-fvb"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="qL7-hI-8v1"/>
+                                    <constraint firstItem="ztd-3J-Svz" firstAttribute="centerY" secondItem="ysn-bF-FSN" secondAttribute="centerY" id="a4L-2S-VqB"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UYX-Dg-ouw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ysn-bF-FSN" firstAttribute="centerX" secondItem="ood-ZM-d3x" secondAttribute="centerX" id="MkZ-AR-wYo"/>
-                            <constraint firstItem="ysn-bF-FSN" firstAttribute="centerY" secondItem="ood-ZM-d3x" secondAttribute="centerY" id="hCv-oD-qyW"/>
+                            <constraint firstItem="jlE-3w-smC" firstAttribute="leading" secondItem="ood-ZM-d3x" secondAttribute="leading" id="37h-AF-Dei"/>
+                            <constraint firstAttribute="bottom" secondItem="jlE-3w-smC" secondAttribute="bottom" id="Ewh-Gl-aDJ"/>
+                            <constraint firstItem="ysn-bF-FSN" firstAttribute="leading" secondItem="UYX-Dg-ouw" secondAttribute="leading" constant="107" id="Io8-ec-nkX"/>
+                            <constraint firstItem="jlE-3w-smC" firstAttribute="centerX" secondItem="ysn-bF-FSN" secondAttribute="centerX" id="NyQ-jx-fEB"/>
+                            <constraint firstItem="jlE-3w-smC" firstAttribute="centerY" secondItem="ysn-bF-FSN" secondAttribute="centerY" id="Ozu-oE-Ucb"/>
+                            <constraint firstItem="jlE-3w-smC" firstAttribute="top" secondItem="ood-ZM-d3x" secondAttribute="top" id="bwV-Lf-LLq"/>
+                            <constraint firstAttribute="trailing" secondItem="jlE-3w-smC" secondAttribute="trailing" id="f0k-mz-vnB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SXQ-ay-2eu"/>
@@ -70,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2L-gz-WfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="-400"/>
+            <point key="canvasLocation" x="737.68115942028987" y="-400.44642857142856"/>
         </scene>
         <!--Film Card View Controller-->
         <scene sceneID="Efs-Dj-2pe">
@@ -252,9 +260,8 @@
         <!--Navigation Controller-->
         <scene sceneID="1yC-np-TPs">
             <objects>
-                <navigationController storyboardIdentifier="LoginNavigationController" id="r8T-rE-jiV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" navigationBarHidden="YES" id="r8T-rE-jiV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gHt-aQ-v71">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -270,8 +277,12 @@
         <image name="Like" width="54" height="54"/>
         <image name="Nope" width="54" height="54"/>
         <image name="Rewind" width="44" height="44"/>
+        <image name="backgroundlogin" width="2500" height="2500"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
