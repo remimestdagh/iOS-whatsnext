@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
-                                <rect key="frame" x="107" y="281" width="200" height="334"/>
+                                <rect key="frame" x="107" y="277" width="200" height="342"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-te-Svm">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="198"/>
@@ -66,23 +66,25 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWA-Rl-ofb">
-                                        <rect key="frame" x="0.0" y="210" width="200" height="34"/>
+                                        <rect key="frame" x="0.0" y="210" width="200" height="36"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="didTapSignInButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="yvI-x5-fvb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-pX-BCV" userLabel="Register">
-                                        <rect key="frame" x="0.0" y="256" width="200" height="30"/>
+                                        <rect key="frame" x="0.0" y="258" width="200" height="36"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <action selector="didTapRegisterButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="R33-Xv-Kx8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-M4-woc" userLabel="NeedToRegister">
-                                        <rect key="frame" x="0.0" y="298" width="200" height="36"/>
+                                        <rect key="frame" x="0.0" y="306" width="200" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="36" id="jHa-6R-B4Y"/>
                                         </constraints>
