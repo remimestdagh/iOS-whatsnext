@@ -18,6 +18,7 @@ class FilmCardViewController: UIViewController {
     @IBOutlet weak var IVMessage: UIImageView!
     @IBOutlet weak var LBLDescription: UITextView!
     @IBOutlet weak var SwipeView: UIView!
+    @IBOutlet weak var LogoutButton: UIButton!
     var currentIndex: Int = 0
     var films: [Film] = []
     var currentFilm: Film?
@@ -29,6 +30,15 @@ class FilmCardViewController: UIViewController {
         mainStackView.layer.cornerCurve = .continuous
     }
 
+    @IBAction func didPressLogoutButton(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
+
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+
+        let mySceneDelegate: SceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        mySceneDelegate.window?.rootViewController = loginVC
+    }
     override func viewDidAppear(_ animated: Bool) {
 
       //  self.currentFilm = self.films[0]
