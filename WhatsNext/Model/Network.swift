@@ -18,7 +18,7 @@ class Network {
           response: response.response,
           data: response.data,
           userInfo: userInfo,
-          storagePolicy: .allowed
+          storagePolicy: .notAllowed
         )
       })
 

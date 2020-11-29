@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FilmWatchlistViewController : UITableViewController {
+class FilmWatchlistViewController: UITableViewController {
 
     var films: [Film] = []
     var currentFilm: Film?

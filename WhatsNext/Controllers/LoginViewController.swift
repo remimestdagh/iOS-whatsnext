@@ -36,8 +36,7 @@ class LoginViewController: UIViewController {
   }
 
     @IBAction func didTapNeedAccountButton(_ sender: Any) {
-        if (registerActive){
-
+        if registerActive {
             registerButton.isHidden = true
             confirmPasswordField.isHidden = true
             firstNameTextField.isHidden = true
@@ -55,11 +54,10 @@ class LoginViewController: UIViewController {
             needAccountButton.setTitle("Already have an account?", for: .normal)
         }
 
-
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
-        let register : Register = Register(email: userNameField.text!,
+        let register: Register = Register(email: userNameField.text!,
         password: passwordField.text!, passwordConfirmation: confirmPasswordField.text!,
         firstName: firstNameTextField.text!, lastName: lastNameTextField.text!
         )

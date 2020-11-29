@@ -9,10 +9,9 @@ class TokenManager {
   }()
 
   func saveAccessToken(authToken: String) {
-    if(authToken=="") {
+    if authToken=="" {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
-    }
-    else {
+    } else {
         UserDefaults.standard.set(true, forKey: "isLoggedIn")
     }
     do {
