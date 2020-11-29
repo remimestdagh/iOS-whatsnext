@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zM-hU-X45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3228.985507246377" y="-94.419642857142847"/>
+            <point key="canvasLocation" x="3248" y="197"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="1d5-ja-3fc">
@@ -272,7 +272,7 @@
         <scene sceneID="PRu-eu-QMf">
             <objects>
                 <navigationController id="baE-wE-mDE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" id="21W-Az-Y8u" userLabel="Favourites"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" selectedImage="star.fill" catalog="system" id="21W-Az-Y8u" userLabel="Favourites"/>
                     <navigationItem key="navigationItem" id="yng-Hc-U7Y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3fc-pr-p1o">
@@ -299,11 +299,75 @@
                     <connections>
                         <segue destination="w1Q-uS-HHf" kind="relationship" relationship="viewControllers" id="5mJ-n8-nvS"/>
                         <segue destination="baE-wE-mDE" kind="relationship" relationship="viewControllers" id="SDH-hJ-ctG"/>
+                        <segue destination="sEu-xh-rHf" kind="relationship" relationship="viewControllers" id="5ZL-It-ohv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lt6-ZQ-67t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="-525"/>
+            <point key="canvasLocation" x="2055" y="-525"/>
+        </scene>
+        <!--Watchlist View Controller-->
+        <scene sceneID="30f-6Z-5E6">
+            <objects>
+                <tableViewController id="msV-gh-Vlc" userLabel="Watchlist View Controller" customClass="FilmWatchlistViewController" customModule="WhatsNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yYM-hg-X2e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilmCell" textLabel="Y0R-XF-CL0" detailTextLabel="KIC-SR-PcW" style="IBUITableViewCellStyleSubtitle" id="M8i-Ss-AFK" userLabel="Film Cell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M8i-Ss-AFK" id="Q4e-O4-1Bh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y0R-XF-CL0">
+                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KIC-SR-PcW">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="msV-gh-Vlc" id="iGH-Uz-TSg"/>
+                            <outlet property="delegate" destination="msV-gh-Vlc" id="zjK-eA-xdQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Qab-b8-Ik2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhM-Vm-XCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4177" y="-525"/>
+        </scene>
+        <!--Watchlist-->
+        <scene sceneID="fpd-QZ-W6X">
+            <objects>
+                <navigationController id="sEu-xh-rHf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Watchlist" selectedImage="ticket" catalog="system" id="gui-HE-Ibo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hA-Tw-LWK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="msV-gh-Vlc" kind="relationship" relationship="rootViewController" id="E4l-fT-NXO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cu8-Gr-W4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3288" y="-525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1yC-np-TPs">
@@ -326,6 +390,8 @@
         <image name="Nope" width="54" height="54"/>
         <image name="Rewind" width="44" height="44"/>
         <image name="backgroundlogin" width="2500" height="2500"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="ticket" catalog="system" width="128" height="84"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
