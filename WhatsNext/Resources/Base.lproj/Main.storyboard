@@ -316,7 +316,7 @@
                             <outlet property="delegate" destination="5CS-Uu-bKN" id="Pfo-LB-RxN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="CNH-cH-iMM"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="CNH-cH-iMM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8h-Mk-ebE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundlogin" id="cgK-BW-T7Z" userLabel="background">
@@ -405,7 +405,7 @@
                             <outlet property="delegate" destination="msV-gh-Vlc" id="zjK-eA-xdQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Qab-b8-Ik2"/>
+                    <navigationItem key="navigationItem" title="Watchlist" id="Qab-b8-Ik2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhM-Vm-XCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
