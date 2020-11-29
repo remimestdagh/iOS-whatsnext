@@ -54,6 +54,25 @@ class Network {
 
     }
     }
+
+    func register(register: Register) {
+
+        sessionManager.request(
+            NetworkRouter.register(register: register)
+        ).responseString {
+            [self] response in
+            switch response.result {
+
+            case .success(let data):
+                self.saveAccessCode(accessCode: data)
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
     func saveAccessCode(accessCode: String) {
         TokenManager.shared.saveAccessToken(authToken: accessCode)
         }
@@ -91,6 +110,6 @@ class Network {
                 }
     func addToWatched(id: String) {
         sessionManager.request(NetworkRouter.addToWatched(id) as URLRequestConvertible
-        )
+        ).resume()
     }
 }

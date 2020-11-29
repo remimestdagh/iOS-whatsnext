@@ -7,6 +7,7 @@
 import UIKit
 import Foundation
 class LoginViewController: UIViewController {
+    var registerActive: Bool = false
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -14,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var needAccountButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     private var network: Network = Network()
     override func viewDidLoad() {
 
@@ -26,20 +29,54 @@ class LoginViewController: UIViewController {
     super.viewWillAppear(animated)
     registerButton.isHidden = true
     confirmPasswordField.isHidden = true
+    firstNameTextField.isHidden = true
+    lastNameTextField.isHidden = true
 
     initializeData()
   }
 
     @IBAction func didTapNeedAccountButton(_ sender: Any) {
-        registerButton.isHidden = false
-        confirmPasswordField.isHidden = false
-        needAccountButton.isHidden = true
+        if (registerActive){
+
+            registerButton.isHidden = true
+            confirmPasswordField.isHidden = true
+            firstNameTextField.isHidden = true
+            lastNameTextField.isHidden = true
+            loginButton.isHidden = false
+            registerActive = false
+            needAccountButton.setTitle("Need an account?", for: .normal)
+        } else {
+            registerButton.isHidden = false
+            confirmPasswordField.isHidden = false
+            firstNameTextField.isHidden = false
+            lastNameTextField.isHidden = false
+            loginButton.isHidden = true
+            registerActive = true
+            needAccountButton.setTitle("Already have an account?", for: .normal)
+        }
+
 
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
-        let register = Register(email: userNameField.text!,
-        password: passwordField.text!, confirmPassword : confirmPasswordField.text!)
+        let register : Register = Register(email: userNameField.text!,
+        password: passwordField.text!, passwordConfirmation: confirmPasswordField.text!,
+        firstName: firstNameTextField.text!,lastName: lastNameTextField.text!
+        )
+        network.register(register: register)
+        let loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
+
+        if(!loggedin) {
+            showPopup(isSuccess: loggedin)
+
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+
+                // This is to get the SceneDelegate object from your view controller
+                // then call the change root view controller function to change to main tab bar
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        }
     }
     private func initializeData() {
 

@@ -63,9 +63,11 @@ enum NetworkRouter {
         ]
       case .register(let register):
         return [
-            "email":register.email,
-            "password":register.password,
-            "confirmPassword":register.confirmPassword
+            "email": register.email,
+            "password": register.password,
+            "passwordConfirmation": register.passwordConfirmation,
+            "lastName": register.lastName,
+            "firstName": register.firstName
 
         ]
 
