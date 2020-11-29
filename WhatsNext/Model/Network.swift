@@ -59,22 +59,28 @@ class Network {
     }
     }
 
-    func register(register: Register) {
+    func register(register: Register, completion: @escaping (Bool) -> Void) {
 
-        sessionManager.request(
-            NetworkRouter.register(register: register)
-        ).responseString {
-            [self] response in
-            switch response.result {
+        AF.request("http://192.168.1.37:45455/api/Account/Register",
+    method: .post,
+    parameters: register,
+    encoder: JSONParameterEncoder.default).responseString { [self] response in
+        debugPrint(response)
+        switch response.result {
 
-            case .success(let data):
-                self.saveAccessCode(accessCode: data)
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        case .success(let data):
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            self.saveAccessCode(accessCode: data)
+            completion(true)
 
-            case .failure(let error):
-                print(error)
-            }
+        case .failure(let error):
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+            print(error)
+            completion(false)
+
         }
+
+    }
 
     }
     func saveAccessCode(accessCode: String) {

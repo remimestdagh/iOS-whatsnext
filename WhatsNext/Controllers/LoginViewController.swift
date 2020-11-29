@@ -61,22 +61,26 @@ class LoginViewController: UIViewController {
     @IBAction func didTapRegisterButton(_ sender: Any) {
         let register : Register = Register(email: userNameField.text!,
         password: passwordField.text!, passwordConfirmation: confirmPasswordField.text!,
-        firstName: firstNameTextField.text!,lastName: lastNameTextField.text!
+        firstName: firstNameTextField.text!, lastName: lastNameTextField.text!
         )
-        network.register(register: register)
-        let loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        Network.shared.register(register: register) { isSuccess in
 
-        if(!loggedin) {
-            showPopup(isSuccess: loggedin)
+            let loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
 
-        } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+            if !loggedin {
+                self.showPopup(isSuccess: loggedin)
 
-                // This is to get the SceneDelegate object from your view controller
-                // then call the change root view controller function to change to main tab bar
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+
+                    // This is to get the SceneDelegate object from your view controller
+                    // then call the change root view controller function to change to main tab bar
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            }
+
         }
+
     }
     private func initializeData() {
 
