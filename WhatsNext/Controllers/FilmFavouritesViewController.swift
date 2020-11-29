@@ -18,7 +18,7 @@ class FilmFavouritesViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchFilms()
+        self.fetchFilms()
     }
 
     func fetchFilms() {

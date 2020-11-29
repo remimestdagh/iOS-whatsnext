@@ -11,14 +11,15 @@ import Alamofire
 class Network {
     let sessionManager: Session = {
       let configuration = URLSessionConfiguration.af.default
-      configuration.requestCachePolicy = .returnCacheDataElseLoad
+      configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
       let responseCacher = ResponseCacher(behavior: .modify { _, response in
         let userInfo = ["date": Date()]
         return CachedURLResponse(
           response: response.response,
           data: response.data,
           userInfo: userInfo,
-          storagePolicy: .allowed)
+          storagePolicy: .allowed
+        )
       })
 
       let networkLogger = NetworkLogger()
@@ -34,7 +35,7 @@ class Network {
     static let shared = Network()
     let baseURL = URL(string: "http://192.168.1.37:45455/api/")!
 
-    func login(login: Login) {
+    func login(login: Login, completion: @escaping (Bool) -> Void) {
 
         AF.request("http://192.168.1.37:45455/api/Account",
     method: .post,
@@ -46,10 +47,12 @@ class Network {
         case .success(let data):
             UserDefaults.standard.set(true, forKey: "isLoggedIn")
             self.saveAccessCode(accessCode: data)
+            completion(true)
 
         case .failure(let error):
             UserDefaults.standard.set(false, forKey: "isLoggedIn")
             print(error)
+            completion(false)
 
         }
 

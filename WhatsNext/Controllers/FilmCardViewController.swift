@@ -37,7 +37,7 @@ class FilmCardViewController: UIViewController {
         Network.shared.getNextFilms(skip: skip) { [self] films in
             self.films = films
             //todo check for empty
-            if(!films.isEmpty) {
+            if !films.isEmpty {
                 self.currentFilm = films[0]
                 self.currentIndex+=1
                 setImage(from: self.currentFilm!.titleImage)

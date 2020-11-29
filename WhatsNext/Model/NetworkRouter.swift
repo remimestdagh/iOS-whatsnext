@@ -100,6 +100,7 @@ extension NetworkRouter: URLRequestConvertible {
     } else if method == .post {
       request = try JSONParameterEncoder().encode(parameters, into: request)
       request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
     }
     return request
   }

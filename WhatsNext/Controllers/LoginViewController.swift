@@ -86,20 +86,23 @@ class LoginViewController: UIViewController {
   @IBAction func didTapSignInButton(_ sender: Any) {
     let login: Login = Login(email: userNameField.text!, password: passwordField.text!)
     var loggedin = false
-    Network.shared.login(login: login)
-    loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
+    Network.shared.login(login: login) { isSuccess in
 
-    if !loggedin {
-        showPopup(isSuccess: loggedin)
+        loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
 
-    } else {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        if !loggedin {
+            self.showPopup(isSuccess: loggedin)
 
-            // This is to get the SceneDelegate object from your view controller
-            // then call the change root view controller function to change to main tab bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+
+                // This is to get the SceneDelegate object from your view controller
+                // then call the change root view controller function to change to main tab bar
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        }
     }
+
   }
 
     func showPopup(isSuccess: Bool) {
