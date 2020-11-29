@@ -19,41 +19,69 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundlogin" translatesAutoresizingMaskIntoConstraints="NO" id="jlE-3w-smC" userLabel="background">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
-                                <rect key="frame" x="107" y="388" width="200" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
+                                <rect key="frame" x="107" y="321" width="200" height="254"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-f4-Nbk">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <accessibility key="accessibilityConfiguration" hint="username" label="Username"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="je2-Jo-Ggv"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-3J-Svz">
-                                        <rect key="frame" x="0.0" y="42" width="200" height="36"/>
-                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                        <accessibility key="accessibilityConfiguration" hint="password" label="Password"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="yoI-lh-g0M"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-te-Svm">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="118"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2k-f4-Nbk">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <accessibility key="accessibilityConfiguration" hint="username" label="Username"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="je2-Jo-Ggv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-3J-Svz">
+                                                <rect key="frame" x="0.0" y="42" width="200" height="36"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <accessibility key="accessibilityConfiguration" hint="password" label="Password"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="yoI-lh-g0M"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-NK-dB3" userLabel="Confirm Password Field">
+                                                <rect key="frame" x="0.0" y="84" width="200" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWA-Rl-ofb">
-                                        <rect key="frame" x="0.0" y="84" width="200" height="36"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" red="0.50435507300000004" green="0.00092524057250000001" blue="0.031329050660000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
+                                        <rect key="frame" x="0.0" y="130" width="200" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="didTapSignInButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="yvI-x5-fvb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-pX-BCV" userLabel="Register">
+                                        <rect key="frame" x="0.0" y="176" width="200" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="didTapRegisterButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="R33-Xv-Kx8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-M4-woc" userLabel="NeedToRegister">
+                                        <rect key="frame" x="0.0" y="218" width="200" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="36" id="jHa-6R-B4Y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Need an account?"/>
+                                        <connections>
+                                            <action selector="didTapNeedAccountButton:" destination="SUp-db-ny6" eventType="touchUpInside" id="sv3-ww-kUz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ztd-3J-Svz" firstAttribute="centerY" secondItem="ysn-bF-FSN" secondAttribute="centerY" id="a4L-2S-VqB"/>
+                                    <constraint firstItem="SN4-M4-woc" firstAttribute="top" secondItem="kWA-Rl-ofb" secondAttribute="bottom" constant="12" id="Yo0-8L-gdz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -71,8 +99,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="SXQ-ay-2eu"/>
                     <connections>
+                        <outlet property="confirmPasswordField" destination="zKz-NK-dB3" id="1Kx-1g-8Sh"/>
                         <outlet property="loginButton" destination="kWA-Rl-ofb" id="UFl-qZ-n3n"/>
+                        <outlet property="needAccountButton" destination="SN4-M4-woc" id="w65-2r-KtK"/>
                         <outlet property="passwordField" destination="ztd-3J-Svz" id="Vkb-XX-1dG"/>
+                        <outlet property="registerButton" destination="Ild-pX-BCV" id="Ues-e1-H8B"/>
                         <outlet property="userNameField" destination="L2k-f4-Nbk" id="mHz-Bf-skQ"/>
                     </connections>
                 </viewController>
@@ -286,6 +317,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

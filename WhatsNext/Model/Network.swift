@@ -41,9 +41,18 @@ class Network {
     parameters: login,
     encoder: JSONParameterEncoder.default).responseString { [self] response in
         debugPrint(response)
-        self.saveAccessCode(accessCode: response.value ?? "")
+        switch response.result {
+
+        case .success(let data):
+            self.saveAccessCode(accessCode: data)
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        case .failure(let error):
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+            print(error)
+
         }
 
+    }
     }
     func saveAccessCode(accessCode: String) {
         TokenManager.shared.saveAccessToken(authToken: accessCode)

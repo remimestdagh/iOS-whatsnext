@@ -29,6 +29,7 @@
 		E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815319255AA9E500933589 /* NetworkRouter.swift */; };
 		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
+		E9D5123A2573B76500A4623B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D512392573B76500A4623B /* Register.swift */; };
 		E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */; };
 		E9F9830925574B3700313C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9830825574B3700313C9E /* Login.swift */; };
 		ECBCA6380CAAD57CDC4F4F9F /* Pods_WhatsNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E46AECBE5705A065007F4D4 /* Pods_WhatsNext.framework */; };
@@ -87,6 +88,7 @@
 		E9815319255AA9E500933589 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9D512392573B76500A4623B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestInterceptor.swift; sourceTree = "<group>"; };
 		E9F9830825574B3700313C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 				E9F9830825574B3700313C9E /* Login.swift */,
 				E9815319255AA9E500933589 /* NetworkRouter.swift */,
 				E9460EC3256A9590001B631C /* Films.swift */,
+				E9D512392573B76500A4623B /* Register.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */,
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
 				E95A713E25604541001B16F5 /* TokenManager.swift in Sources */,
+				E9D5123A2573B76500A4623B /* Register.swift in Sources */,
 				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
 				E9460EC4256A9590001B631C /* Films.swift in Sources */,
 				E9F9830925574B3700313C9E /* Login.swift in Sources */,

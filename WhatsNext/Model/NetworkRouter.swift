@@ -10,10 +10,11 @@ import Alamofire
 
 enum NetworkRouter {
     case fetchFavourites
-    case login
+    case login(login: Login)
     case getNextFilms(String)
     case addToWatchlist(String)
     case addToWatched(String)
+    case register(register: Register)
 
     var baseURL: String { return "http://192.168.1.37:45455/api/" }
 
@@ -23,6 +24,8 @@ enum NetworkRouter {
             return "Films/GetFavourites"
         case .login:
         return "Account"
+        case .register:
+            return "Account/Register"
         case .getNextFilms:
             return "Films/GetNextFilms"
         case .addToWatchlist(let id):
@@ -44,6 +47,8 @@ enum NetworkRouter {
             return .post
         case .addToWatchlist:
             return .post
+        case .register:
+            return .post
 
         }
     }
@@ -51,12 +56,19 @@ enum NetworkRouter {
       switch self {
       case .fetchFavourites:
         return nil
-      case .login:
+      case .login(let login):
         return [
-            "email": "student@hogent.be",
-            "password": "P@ssword123"
+            "email": login.email,
+            "password": login.password
+        ]
+      case .register(let register):
+        return [
+            "email":register.email,
+            "password":register.password,
+            "confirmPassword":register.confirmPassword
 
         ]
+
       case .getNextFilms(let skip):
         return ["skip": skip]
       case .addToWatched:
