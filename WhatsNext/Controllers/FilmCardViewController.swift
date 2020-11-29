@@ -25,6 +25,8 @@ class FilmCardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getNextFilms(skip: "0")
+        mainStackView.layer.cornerRadius = 10
+        mainStackView.layer.cornerCurve = .continuous
     }
 
     override func viewDidAppear(_ animated: Bool) {
