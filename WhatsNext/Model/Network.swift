@@ -44,8 +44,9 @@ class Network {
         switch response.result {
 
         case .success(let data):
-            self.saveAccessCode(accessCode: data)
             UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            self.saveAccessCode(accessCode: data)
+
         case .failure(let error):
             UserDefaults.standard.set(false, forKey: "isLoggedIn")
             print(error)

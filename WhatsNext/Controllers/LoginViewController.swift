@@ -85,11 +85,11 @@ class LoginViewController: UIViewController {
   // MARK: - IBAction
   @IBAction func didTapSignInButton(_ sender: Any) {
     let login: Login = Login(email: userNameField.text!, password: passwordField.text!)
-    self.network.login(login: login)
+    var loggedin = false
+    Network.shared.login(login: login)
+    loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
 
-    let loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
-
-    if(!loggedin) {
+    if !loggedin {
         showPopup(isSuccess: loggedin)
 
     } else {
