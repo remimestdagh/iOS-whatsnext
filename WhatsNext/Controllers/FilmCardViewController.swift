@@ -93,12 +93,21 @@ class FilmCardViewController: UIViewController {
                 print("no Interested")
                 self.IVMessage.isHidden = false
                 self.IVMessage.image = UIImage(named: "NopeSign")
+                nextFilm()
             }
             if SwipeView.center.x > (view.bounds.width / 2 + 100) {
                 print("Interested")
                 self.IVMessage.isHidden = false
                 self.IVMessage.image = UIImage(named: "LikeSign")
                 Network.shared.addToWatchlist(id: String.init(currentFilm!.id))
+                nextFilm()
+            }
+            if SwipeView.center.y > (view.bounds.height / 2 + 200) {
+                print("Already seen")
+                self.IVMessage.isHidden = false
+                self.IVMessage.image = UIImage(named: "SeenSign")
+                Network.shared.addToWatched(id: String.init(currentFilm!.id))
+                nextFilm()
             }
             // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)
@@ -108,7 +117,7 @@ class FilmCardViewController: UIViewController {
             SwipeView.transform = scaleAndRotated
 
             SwipeView.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
-            nextFilm()
+
         }
 
     }
