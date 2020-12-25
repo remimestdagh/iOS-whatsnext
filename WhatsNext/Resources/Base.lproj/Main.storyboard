@@ -438,6 +438,24 @@
             </objects>
             <point key="canvasLocation" x="-236" y="-421"/>
         </scene>
+        <!--Film Detail View Controller-->
+        <scene sceneID="rnY-gj-efO">
+            <objects>
+                <viewController storyboardIdentifier="CardContent" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FFo-zN-w8T" customClass="FilmDetailViewController" customModule="WhatsNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9A4-pW-J6m" customClass="CardHighlight" customModule="Cards">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2RD-t9-YGu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="card" destination="9A4-pW-J6m" id="bP0-PZ-N1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3x-aN-Uw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-697" y="318"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backgroundlogin" width="2500" height="2500"/>

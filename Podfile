@@ -5,6 +5,7 @@ target 'WhatsNext' do
 pod 'Alamofire', '~> 5.2'
 pod 'SwiftLint'
 pod 'RAMAnimatedTabBarController'
+pod 'Cards'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
