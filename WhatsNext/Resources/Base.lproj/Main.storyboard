@@ -212,14 +212,6 @@
                                     <constraint firstItem="Wq8-AQ-TzB" firstAttribute="top" secondItem="HYV-bJ-O9p" secondAttribute="top" constant="20" symbolic="YES" id="XzN-5a-FNJ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwh-uA-dwk">
-                                <rect key="frame" x="339" y="43" width="69" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="didPressLogoutButton:" destination="w1Q-uS-HHf" eventType="touchUpInside" id="r9P-hK-6ej"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgR-At-pPC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -233,15 +225,16 @@
                             <constraint firstItem="JgR-At-pPC" firstAttribute="trailing" secondItem="HYV-bJ-O9p" secondAttribute="trailing" constant="72" id="HDf-rD-cig"/>
                             <constraint firstItem="bdp-bv-9qG" firstAttribute="centerX" secondItem="t7I-OX-BfG" secondAttribute="centerX" id="LEJ-K5-Pch"/>
                             <constraint firstItem="bdp-bv-9qG" firstAttribute="centerY" secondItem="t7I-OX-BfG" secondAttribute="centerY" id="NyO-yJ-3ta"/>
-                            <constraint firstItem="Rwh-uA-dwk" firstAttribute="leading" secondItem="JgR-At-pPC" secondAttribute="leading" constant="339" id="OiV-pK-Tes"/>
-                            <constraint firstItem="JgR-At-pPC" firstAttribute="bottom" secondItem="Rwh-uA-dwk" secondAttribute="bottom" constant="734" id="W8f-CD-xyH"/>
                             <constraint firstAttribute="trailing" secondItem="bdp-bv-9qG" secondAttribute="trailing" id="dp9-qk-Znl"/>
                             <constraint firstItem="bdp-bv-9qG" firstAttribute="leading" secondItem="t7I-OX-BfG" secondAttribute="leading" id="sx4-ZA-vGp"/>
                             <constraint firstItem="HYV-bJ-O9p" firstAttribute="top" relation="lessThanOrEqual" secondItem="JgR-At-pPC" secondAttribute="top" constant="294" id="uXF-6a-Iwy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Swipe" image="heart" catalog="system" selectedImage="heart" id="TYz-I3-d6V" userLabel="Swipe">
+                    <tabBarItem key="tabBarItem" title="Swipe" image="heart" catalog="system" selectedImage="heart" id="TYz-I3-d6V" userLabel="Swipe" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <color key="badgeColor" systemColor="labelColor"/>
+                        <connections>
+                            <outlet property="animation" destination="dsG-KG-Ewr" id="sce-mA-Bcn"/>
+                        </connections>
                     </tabBarItem>
                     <connections>
                         <outlet property="IVMessage" destination="ZYe-Q5-Ldb" id="x85-97-IMs"/>
@@ -249,12 +242,12 @@
                         <outlet property="LBLDescription" destination="g2e-0U-vDv" id="vMd-fP-PMX"/>
                         <outlet property="LBLFilmTitle" destination="f7i-28-Pi6" id="AJg-Sp-XOj"/>
                         <outlet property="LBLScore" destination="K0K-Yj-oyJ" id="cWu-MU-xMG"/>
-                        <outlet property="LogoutButton" destination="Rwh-uA-dwk" id="nXH-OT-Lbo"/>
                         <outlet property="SwipeView" destination="HYV-bJ-O9p" id="whE-qs-pm2"/>
                         <outlet property="mainStackView" destination="Wq8-AQ-TzB" id="yCa-VB-4sx"/>
                         <outlet property="view" destination="t7I-OX-BfG" id="3Vu-XH-Ai4"/>
                     </connections>
                 </viewController>
+                <customObject id="dsG-KG-Ewr" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zM-hU-X45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3247.826086956522" y="196.875"/>
