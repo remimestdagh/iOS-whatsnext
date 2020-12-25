@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         do {
             try Validations.email(userNameField.text!)
         } catch {
-            showPopup(isSuccess: false)
+            showPopup(isSuccess: false, optionalMessage: "Fill in a valid email address")
             return
         }
 
@@ -100,7 +100,7 @@ class LoginViewController: UIViewController {
         loggedin = UserDefaults.standard.bool(forKey: "isLoggedIn")
 
         if !loggedin {
-            self.showPopup(isSuccess: loggedin)
+            self.showPopup(isSuccess: loggedin, optionalMessage: login.email)
 
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -114,9 +114,9 @@ class LoginViewController: UIViewController {
 
   }
 
-    func showPopup(isSuccess: Bool) {
-      let successMessage = "Congratulations! You logged in successully."
-      let errorMessage = "Something went wrong. Please try again"
+    func showPopup(isSuccess: Bool, optionalMessage: String = "") {
+      let successMessage = "Congratulations! You logged in successully. Welcome, "+optionalMessage
+      let errorMessage = "Something went wrong. Please try again. "+optionalMessage
       let alert = UIAlertController(title: isSuccess ? "Success": "Error", message: isSuccess ? successMessage: errorMessage, preferredStyle: UIAlertController.Style.alert)
       alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
       self.present(alert, animated: true, completion: nil)
