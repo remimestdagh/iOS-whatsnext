@@ -57,6 +57,13 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
+        do {
+            try Validations.email(userNameField.text!)
+        } catch {
+            showPopup(isSuccess: false)
+            return
+        }
+
         let register: Register = Register(email: userNameField.text!,
         password: passwordField.text!, passwordConfirmation: confirmPasswordField.text!,
         firstName: firstNameTextField.text!, lastName: lastNameTextField.text!

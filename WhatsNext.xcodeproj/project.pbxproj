@@ -30,6 +30,8 @@
 		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
 		E9B14A3C2573D1660082DBAC /* FilmWatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */; };
+		E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D142302595F88600CEF91E /* FilmDetailViewController.swift */; };
+		E9D142362595FC7C00CEF91E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D142352595FC7C00CEF91E /* Validation.swift */; };
 		E9D5123A2573B76500A4623B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D512392573B76500A4623B /* Register.swift */; };
 		E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */; };
 		E9F9830925574B3700313C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9830825574B3700313C9E /* Login.swift */; };
@@ -90,6 +92,8 @@
 		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmWatchlistViewController.swift; sourceTree = "<group>"; };
+		E9D142302595F88600CEF91E /* FilmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewController.swift; sourceTree = "<group>"; };
+		E9D142352595FC7C00CEF91E /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		E9D512392573B76500A4623B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestInterceptor.swift; sourceTree = "<group>"; };
 		E9F9830825574B3700313C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				E93EE3F92556E990003133FD /* Model */,
 				E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */,
 				E915474425580AE000BAE527 /* NetworkLogger.swift */,
+				E9D142352595FC7C00CEF91E /* Validation.swift */,
 			);
 			path = WhatsNext;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */,
 				E900A36C25695851000EA745 /* FilmCardViewController.swift */,
 				E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */,
+				E9D142302595F88600CEF91E /* FilmDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -527,11 +533,13 @@
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
 				E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
+				E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
 				E900A36D25695851000EA745 /* FilmCardViewController.swift in Sources */,
 				E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */,
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
 				E95A713E25604541001B16F5 /* TokenManager.swift in Sources */,
+				E9D142362595FC7C00CEF91E /* Validation.swift in Sources */,
 				E9D5123A2573B76500A4623B /* Register.swift in Sources */,
 				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
 				E9460EC4256A9590001B631C /* Films.swift in Sources */,

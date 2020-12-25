@@ -40,6 +40,13 @@ class FilmWatchlistViewController: UITableViewController {
         cell.detailTextLabel?.text = films[indexPath.row].regisseur
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedFilm = self.films[indexPath.row]
+        let filmDetailVC = FilmDetailViewController()
+        filmDetailVC.film = selectedFilm
+        self.present(filmDetailVC, animated: true)
+
+    }
 
 }
 
