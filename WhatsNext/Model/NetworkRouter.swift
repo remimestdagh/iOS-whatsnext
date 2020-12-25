@@ -10,8 +10,12 @@ import Alamofire
 
 enum NetworkRouter {
     case fetchFavourites
-    case login
+    case login(login: Login)
     case getNextFilms(String)
+    case addToWatchlist(String)
+    case addToWatched(String)
+    case register(register: Register)
+    case fetchWatchlist
 
     var baseURL: String { return "http://192.168.1.37:45455/api/" }
 
@@ -21,9 +25,18 @@ enum NetworkRouter {
             return "Films/GetFavourites"
         case .login:
         return "Account"
+        case .register:
+            return "Account/Register"
         case .getNextFilms:
             return "Films/GetNextFilms"
+        case .addToWatchlist(let id):
+            return "Films/AddToWatchlist/\(id)"
+        case .addToWatched(let id):
+            return "Films/AddToWatched/\(id)"
+        case .fetchWatchlist:
+            return "Films/GetWatchlist"
         }
+
     }
     var method: HTTPMethod {
         switch self {
@@ -33,21 +46,44 @@ enum NetworkRouter {
             return .post
         case .getNextFilms:
             return .get
+        case .addToWatched:
+            return .post
+        case .addToWatchlist:
+            return .post
+        case .register:
+            return .post
+        case .fetchWatchlist:
+            return .get
 
         }
     }
     var parameters: [String: String]? {
       switch self {
       case .fetchFavourites:
-        return ["": ""]
-      case .login:
+        return nil
+      case .login(let login):
         return [
-            "email": "student@hogent.be",
-            "password": "P@ssword123"
+            "email": login.email,
+            "password": login.password
+        ]
+      case .register(let register):
+        return [
+            "email": register.email,
+            "password": register.password,
+            "passwordConfirmation": register.passwordConfirmation,
+            "lastName": register.lastName,
+            "firstName": register.firstName
 
         ]
+
       case .getNextFilms(let skip):
         return ["skip": skip]
+      case .addToWatched:
+        return nil
+      case .addToWatchlist(let id):
+        return ["id": id]
+      case .fetchWatchlist:
+        return nil
 
       }
     }
@@ -64,6 +100,7 @@ extension NetworkRouter: URLRequestConvertible {
     } else if method == .post {
       request = try JSONParameterEncoder().encode(parameters, into: request)
       request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
     }
     return request
   }

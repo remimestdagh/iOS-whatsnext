@@ -1,26 +1,19 @@
 //
-//  FilmFavouritesViewController.swift
+//  FilmWatchlistViewController.swift
 //  WhatsNext
 //
-//  Created by remi mestdagh on 10/11/2020.
+//  Created by remi mestdagh on 29/11/2020.
 //
+
+import Foundation
 import UIKit
 
-class FilmFavouritesViewController: UITableViewController {
-    @IBOutlet weak var logOutButton: UIBarButtonItem!
+class FilmWatchlistViewController: UITableViewController {
+
     var films: [Film] = []
     var currentFilm: Film?
     let loadingIndicator = UIActivityIndicatorView(style: .large)
 
-    @IBAction func didPressLogoutButton(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.synchronize()
-
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-
-        let mySceneDelegate: SceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-        mySceneDelegate.window?.rootViewController = loginVC
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.center = view.center
@@ -33,7 +26,7 @@ class FilmFavouritesViewController: UITableViewController {
 
     func fetchFilms() {
         loadingIndicator.startAnimating()
-        Network.shared.getFavouriteFilms { [self] films in
+        Network.shared.getWatchlist { [self] films in
             self.films = films
             loadingIndicator.stopAnimating()
             tableView.reloadData()
@@ -47,18 +40,26 @@ class FilmFavouritesViewController: UITableViewController {
         cell.detailTextLabel?.text = films[indexPath.row].regisseur
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedFilm = self.films[indexPath.row]
+        let filmDetailVC = FilmDetailViewController()
+        filmDetailVC.film = selectedFilm
+        self.present(filmDetailVC, animated: true)
+
+    }
 
 }
 
-extension FilmFavouritesViewController {
+extension FilmWatchlistViewController {
   override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
     currentFilm = films[indexPath.row]
     return indexPath
   }
 }
 
-extension FilmFavouritesViewController {
+extension FilmWatchlistViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return films.count
   }
+
 }

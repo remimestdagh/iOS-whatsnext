@@ -14,9 +14,9 @@ struct Film {
     var regisseur: String
     var year: Int
     var score: Int
-    var acteurs: [String]
     var titleImage: String
     var runtime: Int
+    var description: String
 
     enum CodingKeys: String, CodingKey {
 
@@ -25,13 +25,12 @@ struct Film {
         case regisseur
         case year
         case score
-        case acteurs
         case titleImage
         case runtime
+        case description
     }
 }
 extension Film: Decodable {
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
@@ -39,9 +38,9 @@ extension Film: Decodable {
         regisseur = try container.decode(String.self, forKey: .regisseur)
         year = try container.decode(Int.self, forKey: .year)
         score = try container.decode(Int.self, forKey: .score)
-        acteurs = try container.decode([String].self, forKey: .id)
-        titleImage = try container.decode(String.self, forKey: .id)
-        runtime = try container.decode(Int.self, forKey: .id)
+        titleImage = try container.decode(String.self, forKey: .titleImage)
+        runtime = try container.decode(Int.self, forKey: .runtime)
+        description = try container.decode(String.self, forKey: .description)
     }
 
 }

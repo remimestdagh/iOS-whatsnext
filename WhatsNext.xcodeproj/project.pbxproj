@@ -11,6 +11,7 @@
 		E6B759C313EE73DC72A73D6C /* Pods_WhatsNext_WhatsNextUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82981B366D897D5A48329A05 /* Pods_WhatsNext_WhatsNextUITests.framework */; };
 		E9005FEB2556AC2D00527CAB /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9005FEA2556AC2D00527CAB /* Film.swift */; };
 		E9005FF72556AEF900527CAB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9005FF62556AEF900527CAB /* Network.swift */; };
+		E900A36D25695851000EA745 /* FilmCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E900A36C25695851000EA745 /* FilmCardViewController.swift */; };
 		E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E915474425580AE000BAE527 /* NetworkLogger.swift */; };
 		E93A609C25517EA500BCB979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A609B25517EA500BCB979 /* AppDelegate.swift */; };
 		E93A60A325517EA500BCB979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93A60A125517EA500BCB979 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		E93A60BE25517EB900BCB979 /* WhatsNextUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93A60BD25517EB900BCB979 /* WhatsNextUITests.swift */; };
 		E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE40F2556ED28003133FD /* LoginViewController.swift */; };
 		E93EE4152556ED5D003133FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93EE4142556ED5D003133FD /* User.swift */; };
+		E9460EC4256A9590001B631C /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9460EC3256A9590001B631C /* Films.swift */; };
 		E95A713E25604541001B16F5 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A713D25604541001B16F5 /* TokenManager.swift */; };
 		E95A71502560462D001B16F5 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714E2560462C001B16F5 /* SecureStore.swift */; };
 		E95A71512560462D001B16F5 /* SecureStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714D2560462C001B16F5 /* SecureStoreError.swift */; };
@@ -27,6 +29,10 @@
 		E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815319255AA9E500933589 /* NetworkRouter.swift */; };
 		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
+		E9B14A3C2573D1660082DBAC /* FilmWatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */; };
+		E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D142302595F88600CEF91E /* FilmDetailViewController.swift */; };
+		E9D142362595FC7C00CEF91E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D142352595FC7C00CEF91E /* Validation.swift */; };
+		E9D5123A2573B76500A4623B /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D512392573B76500A4623B /* Register.swift */; };
 		E9D7C5862556B8E900644AF9 /* AuthRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */; };
 		E9F9830925574B3700313C9E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9830825574B3700313C9E /* Login.swift */; };
 		ECBCA6380CAAD57CDC4F4F9F /* Pods_WhatsNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E46AECBE5705A065007F4D4 /* Pods_WhatsNext.framework */; };
@@ -60,6 +66,7 @@
 		A4B783071FCE52CE69AED130 /* Pods-WhatsNext-WhatsNextUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNext-WhatsNextUITests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNext-WhatsNextUITests/Pods-WhatsNext-WhatsNextUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E9005FEA2556AC2D00527CAB /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		E9005FF62556AEF900527CAB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E900A36C25695851000EA745 /* FilmCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCardViewController.swift; sourceTree = "<group>"; };
 		E915474425580AE000BAE527 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		E93A609825517EA500BCB979 /* WhatsNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93A609B25517EA500BCB979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 		E93A60BF25517EB900BCB979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E93EE40F2556ED28003133FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E93EE4142556ED5D003133FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9460EC3256A9590001B631C /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		E94B0386558C7F2A15A81719 /* Pods-WhatsNextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsNextTests.debug.xcconfig"; path = "Target Support Files/Pods-WhatsNextTests/Pods-WhatsNextTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E95A713D25604541001B16F5 /* TokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		E95A714D2560462C001B16F5 /* SecureStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreError.swift; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 		E9815319255AA9E500933589 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmWatchlistViewController.swift; sourceTree = "<group>"; };
+		E9D142302595F88600CEF91E /* FilmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewController.swift; sourceTree = "<group>"; };
+		E9D142352595FC7C00CEF91E /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		E9D512392573B76500A4623B /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestInterceptor.swift; sourceTree = "<group>"; };
 		E9F9830825574B3700313C9E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +185,7 @@
 				E93EE3F92556E990003133FD /* Model */,
 				E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */,
 				E915474425580AE000BAE527 /* NetworkLogger.swift */,
+				E9D142352595FC7C00CEF91E /* Validation.swift */,
 			);
 			path = WhatsNext;
 			sourceTree = "<group>";
@@ -204,6 +217,8 @@
 				E93EE4142556ED5D003133FD /* User.swift */,
 				E9F9830825574B3700313C9E /* Login.swift */,
 				E9815319255AA9E500933589 /* NetworkRouter.swift */,
+				E9460EC3256A9590001B631C /* Films.swift */,
+				E9D512392573B76500A4623B /* Register.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +236,9 @@
 			children = (
 				E93EE40F2556ED28003133FD /* LoginViewController.swift */,
 				E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */,
+				E900A36C25695851000EA745 /* FilmCardViewController.swift */,
+				E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */,
+				E9D142302595F88600CEF91E /* FilmDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -515,14 +533,20 @@
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
 				E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
+				E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
+				E900A36D25695851000EA745 /* FilmCardViewController.swift in Sources */,
 				E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */,
 				E915474525580AE000BAE527 /* NetworkLogger.swift in Sources */,
 				E95A713E25604541001B16F5 /* TokenManager.swift in Sources */,
+				E9D142362595FC7C00CEF91E /* Validation.swift in Sources */,
+				E9D5123A2573B76500A4623B /* Register.swift in Sources */,
 				E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */,
+				E9460EC4256A9590001B631C /* Films.swift in Sources */,
 				E9F9830925574B3700313C9E /* Login.swift in Sources */,
 				E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */,
 				E95A71502560462D001B16F5 /* SecureStore.swift in Sources */,
+				E9B14A3C2573D1660082DBAC /* FilmWatchlistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
