@@ -127,13 +127,34 @@ class Network {
     }
   }
 
-    func addToWatchlist(id: String) {
-        sessionManager.request(
-            NetworkRouter.addToWatchlist(id) as
-                URLRequestConvertible).resume()
+    func addToWatchlist(id: String, completion: @escaping (Bool) -> Void) {
+        sessionManager.request(NetworkRouter.addToWatchlist(id) as URLRequestConvertible
+        ).response { response in
+            let result = response.result
+            switch result {
+            case .success(_):
+                completion(true)
+
+            case .failure (_):
+                completion(false)
+
+            }
+
+        }
                 }
-    func addToWatched(id: String) {
+    func addToWatched(id: String, completion: @escaping (Bool) -> Void) {
         sessionManager.request(NetworkRouter.addToWatched(id) as URLRequestConvertible
-        ).resume()
+        ).response { response in
+            let result = response.result
+            switch result {
+            case .success(_):
+                completion(true)
+
+            case .failure(_):
+                completion(false)
+
+            }
+
+        }
     }
 }
