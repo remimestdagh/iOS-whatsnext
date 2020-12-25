@@ -4,9 +4,64 @@ enum EvaluateError: Error {
     case isEmpty
     case isNotValidEmailAddress
     case isNotValidEmailLength
+    case invalidCharacter
+    case tooLong
+    case tooShort
+}
+extension EvaluateError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .tooShort:
+            return NSLocalizedString(
+                "Your name needs to be at least 2 characters long",
+                comment: ""
+            )
+        case .tooLong:
+            return NSLocalizedString(
+                "Your name can't be longer than 14 characters",
+                comment: ""
+            )
+        case .invalidCharacter:
+            return NSLocalizedString(
+                "Your name can only contain letters",
+                comment: ""
+            )
+        case .isEmpty:
+            return NSLocalizedString(
+                "Please fill in every field",
+                comment: ""
+            )
+
+        case .isNotValidEmailAddress:
+            return NSLocalizedString(
+                "Email is not valid",
+                comment: ""
+            )
+        case .isNotValidEmailLength:
+            return NSLocalizedString(
+                "Email is not valid",
+                comment: ""
+            )
+        }
+    }
 }
 
 struct Validations {
+    static func validate(username: String) throws {
+        guard username.count > 1 else {
+            throw EvaluateError.tooShort
+        }
+
+        guard username.count < 15 else {
+            throw EvaluateError.tooLong
+        }
+
+        for character in username {
+            guard character.isLetter else {
+                throw EvaluateError.invalidCharacter
+            }
+        }
+    }
     private static let emailRegEx = "(?:[a-zA-Z0-9!#$%\\&‘*+/=?\\^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%\\&'*+/=?\\^_`{|}"
         + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
         + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"

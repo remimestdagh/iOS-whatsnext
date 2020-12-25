@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="-13" width="414" height="909"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ysn-bF-FSN">
-                                <rect key="frame" x="82" y="277" width="250" height="342"/>
+                                <rect key="frame" x="82" y="264" width="250" height="368.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-te-Svm">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="198"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="224.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN4-k4-sXw" userLabel="First Name Text Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
@@ -64,13 +64,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyM-aK-tYD">
+                                                <rect key="frame" x="0.0" y="204" width="250" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.95807837929999995" blue="0.087314045559999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="highlightedColor" red="1" green="0.95807837929999995" blue="0.087314045559999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="yx0-Vg-2UR"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWA-Rl-ofb">
-                                        <rect key="frame" x="0.0" y="210" width="250" height="36"/>
+                                        <rect key="frame" x="0.0" y="236.5" width="250" height="36"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login"/>
@@ -79,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-pX-BCV" userLabel="Register">
-                                        <rect key="frame" x="0.0" y="258" width="250" height="36"/>
+                                        <rect key="frame" x="0.0" y="284.5" width="250" height="36"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Register"/>
@@ -88,7 +94,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-M4-woc" userLabel="NeedToRegister">
-                                        <rect key="frame" x="0.0" y="306" width="250" height="36"/>
+                                        <rect key="frame" x="0.0" y="332.5" width="250" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="36" id="jHa-6R-B4Y"/>
                                         </constraints>
@@ -119,6 +125,7 @@
                     <navigationItem key="navigationItem" id="SXQ-ay-2eu"/>
                     <connections>
                         <outlet property="confirmPasswordField" destination="zKz-NK-dB3" id="1Kx-1g-8Sh"/>
+                        <outlet property="errorLabel" destination="VyM-aK-tYD" id="cwU-fH-in8"/>
                         <outlet property="firstNameTextField" destination="GN4-k4-sXw" id="Qna-hN-CfS"/>
                         <outlet property="lastNameTextField" destination="xSc-mp-4AZ" id="fTn-UP-mCQ"/>
                         <outlet property="loginButton" destination="kWA-Rl-ofb" id="UFl-qZ-n3n"/>

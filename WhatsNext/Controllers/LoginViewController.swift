@@ -8,7 +8,8 @@ import UIKit
 import Foundation
 class LoginViewController: UIViewController {
     var registerActive: Bool = false
-
+    var labelActive: Bool = false
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController {
     confirmPasswordField.isHidden = true
     firstNameTextField.isHidden = true
     lastNameTextField.isHidden = true
+    errorLabel.isHidden = true
 
     initializeData()
   }
@@ -57,10 +59,16 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func didTapRegisterButton(_ sender: Any) {
+
         do {
+            try Validations.validate(username: firstNameTextField.text!)
             try Validations.email(userNameField.text!)
+            try Validations.validate(username: lastNameTextField.text!)
+
         } catch {
-            showPopup(isSuccess: false, optionalMessage: "Fill in a valid email address")
+            errorLabel.isHidden = false
+            errorLabel.text = error.localizedDescription
+            showPopup(isSuccess: false, optionalMessage: error.localizedDescription)
             return
         }
 
