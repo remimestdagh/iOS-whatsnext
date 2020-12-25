@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r8T-rE-jiV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r8T-rE-jiV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -298,7 +298,16 @@
                             <outlet property="delegate" destination="5CS-Uu-bKN" id="Pfo-LB-RxN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favourites" id="CNH-cH-iMM"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="CNH-cH-iMM">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="OWP-dM-7GD">
+                            <connections>
+                                <action selector="didPressLogoutButton:" destination="5CS-Uu-bKN" id="xUl-jW-dS6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="logOutButton" destination="OWP-dM-7GD" id="cRc-0Y-Ina"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8h-Mk-ebE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundlogin" id="cgK-BW-T7Z" userLabel="background">
@@ -312,8 +321,11 @@
         <scene sceneID="PRu-eu-QMf">
             <objects>
                 <navigationController id="baE-wE-mDE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" selectedImage="star" id="21W-Az-Y8u" userLabel="Favourites">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" id="21W-Az-Y8u" userLabel="Favourites" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <color key="badgeColor" systemColor="labelColor"/>
+                        <connections>
+                            <outlet property="animation" destination="nNt-YX-Jl9" id="NvU-wI-3oQ"/>
+                        </connections>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="yng-Hc-U7Y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -325,14 +337,15 @@
                         <segue destination="5CS-Uu-bKN" kind="relationship" relationship="rootViewController" id="dVv-xL-5WE"/>
                     </connections>
                 </navigationController>
+                <customObject id="nNt-YX-Jl9" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ons-Ux-L3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2880" y="-1290"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="aHf-Uw-aio">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="6nc-sd-gMW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="6nc-sd-gMW" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UfR-mI-1O9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -397,8 +410,11 @@
         <scene sceneID="fpd-QZ-W6X">
             <objects>
                 <navigationController id="sEu-xh-rHf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watchlist" image="film" catalog="system" selectedImage="film" id="gui-HE-Ibo">
+                    <tabBarItem key="tabBarItem" title="Watchlist" image="film" catalog="system" selectedImage="film" id="gui-HE-Ibo" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <color key="badgeColor" systemColor="labelColor"/>
+                        <connections>
+                            <outlet property="animation" destination="O1w-Q3-ki4" id="1IH-Vf-YgO"/>
+                        </connections>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hA-Tw-LWK">
@@ -409,6 +425,7 @@
                         <segue destination="msV-gh-Vlc" kind="relationship" relationship="rootViewController" id="E4l-fT-NXO"/>
                     </connections>
                 </navigationController>
+                <customObject id="O1w-Q3-ki4" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu8-Gr-W4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3288" y="-525"/>

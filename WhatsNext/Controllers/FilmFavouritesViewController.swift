@@ -7,10 +7,20 @@
 import UIKit
 
 class FilmFavouritesViewController: UITableViewController {
+    @IBOutlet weak var logOutButton: UIBarButtonItem!
     var films: [Film] = []
     var currentFilm: Film?
     let loadingIndicator = UIActivityIndicatorView(style: .large)
 
+    @IBAction func didPressLogoutButton(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
+
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+
+        let mySceneDelegate: SceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        mySceneDelegate.window?.rootViewController = loginVC
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.center = view.center
