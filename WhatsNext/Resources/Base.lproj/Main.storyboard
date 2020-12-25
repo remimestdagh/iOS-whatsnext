@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="2880" y="-1290"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--The Tab Bar View Controller-->
         <scene sceneID="aHf-Uw-aio">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="6nc-sd-gMW" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="6nc-sd-gMW" customClass="TheTabBarViewController" customModule="WhatsNext" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UfR-mI-1O9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

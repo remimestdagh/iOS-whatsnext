@@ -28,6 +28,7 @@
 		E95A71522560462D001B16F5 /* SecureStoreQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95A714F2560462D001B16F5 /* SecureStoreQueryable.swift */; };
 		E981531A255AA9E500933589 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815319255AA9E500933589 /* NetworkRouter.swift */; };
 		E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */; };
+		E99FCAFC2596884F00051338 /* TheTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99FCAFB2596884F00051338 /* TheTabBarViewController.swift */; };
 		E9A1EEF72557D7CA0056B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */; };
 		E9B14A3C2573D1660082DBAC /* FilmWatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */; };
 		E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D142302595F88600CEF91E /* FilmDetailViewController.swift */; };
@@ -90,6 +91,7 @@
 		E95A714F2560462D001B16F5 /* SecureStoreQueryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStoreQueryable.swift; sourceTree = "<group>"; };
 		E9815319255AA9E500933589 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		E9815321255AAF3B00933589 /* FilmFavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmFavouritesViewController.swift; sourceTree = "<group>"; };
+		E99FCAFB2596884F00051338 /* TheTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTabBarViewController.swift; sourceTree = "<group>"; };
 		E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmWatchlistViewController.swift; sourceTree = "<group>"; };
 		E9D142302595F88600CEF91E /* FilmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				E900A36C25695851000EA745 /* FilmCardViewController.swift */,
 				E9B14A3B2573D1660082DBAC /* FilmWatchlistViewController.swift */,
 				E9D142302595F88600CEF91E /* FilmDetailViewController.swift */,
+				E99FCAFB2596884F00051338 /* TheTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				E95A71512560462D001B16F5 /* SecureStoreError.swift in Sources */,
 				E9005FF72556AEF900527CAB /* Network.swift in Sources */,
 				E9815322255AAF3B00933589 /* FilmFavouritesViewController.swift in Sources */,
+				E99FCAFC2596884F00051338 /* TheTabBarViewController.swift in Sources */,
 				E93EE4102556ED28003133FD /* LoginViewController.swift in Sources */,
 				E9D142312595F88600CEF91E /* FilmDetailViewController.swift in Sources */,
 				E93EE4152556ED5D003133FD /* User.swift in Sources */,
