@@ -7,7 +7,10 @@
 
 import Foundation
 import UIKit
-
+class FilmCell: UITableViewCell {
+    @IBOutlet weak var posterImg: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+}
 class FilmWatchlistViewController: UITableViewController {
 
     var films: [Film] = []
@@ -18,6 +21,11 @@ class FilmWatchlistViewController: UITableViewController {
         super.viewDidLoad()
         loadingIndicator.center = view.center
         view.addSubview(loadingIndicator)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let filmDetailViewController = segue.destination as! FilmDetailViewController
+        let indexPath = tableView.indexPathForSelectedRow
+        filmDetailViewController.film = self.films[indexPath!.row]
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,17 +43,20 @@ class FilmWatchlistViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath)
-        cell.textLabel?.text = films[indexPath.row].titel
-        cell.detailTextLabel?.text = films[indexPath.row].regisseur
-        return cell
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedFilm = self.films[indexPath.row]
-        let filmDetailVC = FilmDetailViewController()
-        //filmDetailVC.film = selectedFilm
-        self.present(filmDetailVC, animated: true)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath) as! FilmCell
 
+        let imageURL = URL(string: films[indexPath.row].titleImage)!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                cell.posterImg.image = image
+            }
+        }
+        cell.titleLbl.text = films[indexPath.row].titel
+
+        return cell
     }
 
 }

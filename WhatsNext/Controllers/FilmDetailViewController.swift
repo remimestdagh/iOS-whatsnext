@@ -9,4 +9,27 @@ import Foundation
 import UIKit
 
 class FilmDetailViewController: UIViewController {
+    var film: Film!
+    @IBOutlet weak var filmPoster: UIImageView!
+    @IBOutlet weak var filmName: UILabel!
+    @IBOutlet weak var filmDirector: UILabel!
+    @IBOutlet weak var filmDescription: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setImage(from: self.film!.titleImage)
+        filmName.text = self.film!.titel
+        filmDirector.text = self.film!.regisseur
+        filmDescription.text = self.film!.description
+    }
+    func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.filmPoster.image = image
+            }
+        }
+
+    }
 }
