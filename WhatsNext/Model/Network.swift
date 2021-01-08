@@ -40,7 +40,7 @@ class Network {
         AF.request("http://192.168.1.37:45455/api/Account",
     method: .post,
     parameters: login,
-    encoder: JSONParameterEncoder.default).responseString { [self] response in
+    encoder: JSONParameterEncoder.default).validate().responseString { [self] response in
         debugPrint(response)
         switch response.result {
 
@@ -64,7 +64,7 @@ class Network {
         AF.request("http://192.168.1.37:45455/api/Account/Register",
     method: .post,
     parameters: register,
-    encoder: JSONParameterEncoder.default).responseString { [self] response in
+    encoder: JSONParameterEncoder.default).validate().responseString { [self] response in
         debugPrint(response)
         switch response.result {
 
@@ -88,7 +88,7 @@ class Network {
         }
     func getFavouriteFilms(completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
-            NetworkRouter.fetchFavourites as URLRequestConvertible).responseDecodable(of: [Film].self) { response in
+            NetworkRouter.fetchFavourites as URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                 guard let films = response.value
                 else {
                     print("mislukt")
@@ -102,7 +102,7 @@ class Network {
     func getWatchlist(completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
             NetworkRouter.fetchWatchlist as
-                URLRequestConvertible).responseDecodable(of: [Film].self) { response in
+                URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
                         print("mislukt")
@@ -116,7 +116,7 @@ class Network {
     func getNextFilms(skip: String, completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
             NetworkRouter.getNextFilms(skip) as
-                URLRequestConvertible).responseDecodable(of: [Film].self) { response in
+                URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
                         print("mislukt")
@@ -129,13 +129,13 @@ class Network {
 
     func addToWatchlist(id: String, completion: @escaping (Bool) -> Void) {
         sessionManager.request(NetworkRouter.addToWatchlist(id) as URLRequestConvertible
-        ).response { response in
+        ).validate().response { response in
             let result = response.result
             switch result {
-            case .success(_):
+            case .success:
                 completion(true)
 
-            case .failure (_):
+            case .failure:
                 completion(false)
 
             }
@@ -144,13 +144,13 @@ class Network {
                 }
     func addToWatched(id: String, completion: @escaping (Bool) -> Void) {
         sessionManager.request(NetworkRouter.addToWatched(id) as URLRequestConvertible
-        ).response { response in
+        ).validate().response { response in
             let result = response.result
             switch result {
-            case .success(_):
+            case .success:
                 completion(true)
 
-            case .failure(_):
+            case .failure:
                 completion(false)
 
             }
