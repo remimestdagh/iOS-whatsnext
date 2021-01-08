@@ -125,7 +125,8 @@ class LoginViewController: UIViewController {
     func showPopup(isSuccess: Bool, optionalMessage: String = "") {
       let successMessage = "Congratulations! You logged in successully. Welcome, "+optionalMessage
       let errorMessage = "Something went wrong. Please try again. "+optionalMessage
-      let alert = UIAlertController(title: isSuccess ? "Success": "Error", message: isSuccess ? successMessage: errorMessage, preferredStyle: UIAlertController.Style.alert)
+      let alert = UIAlertController(title: isSuccess ? "Success": "Error",
+                                 message: isSuccess ? successMessage: errorMessage, preferredStyle: UIAlertController.Style.alert)
       alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
       self.present(alert, animated: true, completion: nil)
     }
