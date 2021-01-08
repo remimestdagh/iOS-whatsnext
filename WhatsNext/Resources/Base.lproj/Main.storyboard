@@ -292,9 +292,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundlogin" translatesAutoresizingMaskIntoConstraints="NO" id="VLs-UJ-tY5" userLabel="background">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundlogin" translatesAutoresizingMaskIntoConstraints="NO" id="VLs-UJ-tY5" userLabel="background">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                             </imageView>
                             <stackView opaque="NO" alpha="0.80000001192092896" contentMode="center" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t4e-F4-usf">
                                 <rect key="frame" x="64" y="328" width="300" height="270.66666666666669"/>
@@ -346,6 +345,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lcu-0B-GHs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VLs-UJ-tY5" firstAttribute="top" secondItem="lcu-0B-GHs" secondAttribute="top" id="8eC-up-c6p"/>
+                            <constraint firstItem="VLs-UJ-tY5" firstAttribute="centerX" secondItem="jEb-WR-KEs" secondAttribute="centerX" id="cfA-ZF-CJ4"/>
+                            <constraint firstItem="VLs-UJ-tY5" firstAttribute="trailing" secondItem="lcu-0B-GHs" secondAttribute="trailing" id="k9C-9G-YY3"/>
+                            <constraint firstItem="VLs-UJ-tY5" firstAttribute="centerY" secondItem="jEb-WR-KEs" secondAttribute="centerY" id="olY-Nf-90i"/>
+                            <constraint firstItem="VLs-UJ-tY5" firstAttribute="leading" secondItem="lcu-0B-GHs" secondAttribute="leading" id="p8W-mg-BUN"/>
+                            <constraint firstAttribute="bottom" secondItem="VLs-UJ-tY5" secondAttribute="bottom" id="rYZ-Cn-f3F"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="FilmName" destination="yoI-2Q-YCV" id="mGY-19-9WH"/>
@@ -356,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWf-Dz-YVO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4197" y="182"/>
+            <point key="canvasLocation" x="4177.5700934579436" y="249.46004319654429"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="1d5-ja-3fc">
