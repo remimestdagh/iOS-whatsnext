@@ -43,7 +43,7 @@ class FilmWatchlistViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedFilm = self.films[indexPath.row]
         let filmDetailVC = FilmDetailViewController()
-        filmDetailVC.film = selectedFilm
+        //filmDetailVC.film = selectedFilm
         self.present(filmDetailVC, animated: true)
 
     }
