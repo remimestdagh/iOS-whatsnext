@@ -18,7 +18,9 @@ class TheTabBarViewController: RAMAnimatedTabBarController {
 
 extension TheTabBarViewController: UITabBarControllerDelegate {
 
-    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController,
+                          to toVC: UIViewController)
+    -> UIViewControllerAnimatedTransitioning? {
         return MyTransition(viewControllers: tabBarController.viewControllers)
     }
 }
