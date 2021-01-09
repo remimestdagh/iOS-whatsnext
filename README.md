@@ -1,16 +1,16 @@
 # iOS WhatsNext app
-## Movie recommentation app
+### Movie recommentation app
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-## General info
+### General info
 This project was made for HoGent. 
 
 Native apps 2: iOS
 	
-## Technologies
+### Technologies
 Project is created with cacao
 
 used pods:
@@ -18,7 +18,7 @@ used pods:
 * SwiftLint
 * RAMAnimatedTabBarController
 	
-## Setup
+### Setup
 To run this project, clone project and:
 
 ```
@@ -26,5 +26,5 @@ $ cd ../iOS-whatsnext
 $ pod install
 ```
 
-## Created & maintained by
+### Created & maintained by
 Remi Mestdagh
