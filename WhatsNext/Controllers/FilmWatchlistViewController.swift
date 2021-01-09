@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+/// Custom cell for tableview of watchlist
 class FilmCell: UITableViewCell {
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
 }
+/// View controller of watchlist
 class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -37,6 +39,10 @@ class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
 
     }
 
+    /// filter function for the search bar
+    /// - Parameters:
+    ///   - searchBar: the searchbar
+    ///   - searchText: the filter string
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
 
@@ -50,6 +56,7 @@ class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
 
       tableView.reloadData()
     }
+    /// fetches films from api
     func fetchFilms() {
         loadingIndicator.startAnimating()
         Network.shared.getWatchlist { [self] films in
@@ -60,6 +67,11 @@ class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
         }
     }
 
+    /// Renders a tablecell
+    /// - Parameters:
+    ///   - tableView: the tableview
+    ///   - indexPath: index in tableview
+    /// - Returns: The cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath) as! FilmCell

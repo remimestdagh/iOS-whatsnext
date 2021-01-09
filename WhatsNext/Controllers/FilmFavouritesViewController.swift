@@ -6,12 +6,15 @@
 //
 import UIKit
 
+/// minimalist tableview to display already watched films
 class FilmFavouritesViewController: UITableViewController {
     @IBOutlet weak var logOutButton: UIBarButtonItem!
     var films: [Film] = []
     var currentFilm: Film?
     let loadingIndicator = UIActivityIndicatorView(style: .large)
 
+    /// logout button
+    /// - Parameter sender: the button sends
     @IBAction func didPressLogoutButton(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
@@ -31,6 +34,7 @@ class FilmFavouritesViewController: UITableViewController {
         self.fetchFilms()
     }
 
+    /// fetches films from api, includes loading animation
     func fetchFilms() {
         loadingIndicator.startAnimating()
         Network.shared.getFavouriteFilms { [self] films in
@@ -41,6 +45,11 @@ class FilmFavouritesViewController: UITableViewController {
         }
     }
 
+    /// method to render a cell of a tableview
+    /// - Parameters:
+    ///   - tableView: the tableview
+    ///   - indexPath: index of the cell in the tableview
+    /// - Returns: the cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FilmCell", for: indexPath)
         cell.textLabel?.text = films[indexPath.row].titel

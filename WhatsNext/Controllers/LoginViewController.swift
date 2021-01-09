@@ -6,6 +6,7 @@
 //
 import UIKit
 import Foundation
+/// view controller for the login view
 class LoginViewController: UIViewController {
     var registerActive: Bool = false
     var labelActive: Bool = false

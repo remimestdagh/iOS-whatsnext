@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RAMAnimatedTabBarController
+/// controller for the main tab bar, using animated library to animate clicks
 class TheTabBarViewController: RAMAnimatedTabBarController {
 
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ extension TheTabBarViewController: UITabBarControllerDelegate {
     }
 }
 
+/// transition between viewcontrollers
 class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
     let viewControllers: [UIViewController]?
@@ -71,6 +73,9 @@ class MyTransition: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
 
+    /// provide index for pressed item in tab bar
+    /// - Parameter vc: the viewcontroller represented by item
+    /// - Returns: its index
     func getIndex(forViewController vc: UIViewController) -> Int? {
         guard let vcs = self.viewControllers else { return nil }
         for (index, thisVC) in vcs.enumerated() {
