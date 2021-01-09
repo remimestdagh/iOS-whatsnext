@@ -13,8 +13,13 @@ class FilmDetailViewController: UIViewController {
     var film: Film!
     @IBOutlet weak var filmPoster: UIImageView!
     @IBOutlet weak var filmName: UILabel!
+    @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var filmDirector: UILabel!
     @IBOutlet weak var filmDescription: UITextView!
+    override func viewWillAppear(_ animated: Bool) {
+        mainStackView.layer.cornerRadius = 15
+        mainStackView.layer.cornerCurve = .continuous
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setImage(from: self.film!.titleImage)

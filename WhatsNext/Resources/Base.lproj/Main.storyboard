@@ -160,13 +160,13 @@
                                 <rect key="frame" x="72" y="238" width="284" height="450"/>
                                 <subviews>
                                     <stackView opaque="NO" alpha="0.80000000000000004" contentMode="center" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wq8-AQ-TzB">
-                                        <rect key="frame" x="-8" y="50" width="300" height="350"/>
+                                        <rect key="frame" x="-16" y="50" width="316" height="350"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-Lu-XKG">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="129.33333333333334"/>
+                                                <rect key="frame" x="8" y="7.9999999999999929" width="300" height="113.33333333333331"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7i-28-Pi6" userLabel="Film Name">
-                                                <rect key="frame" x="0.0" y="137.33333333333331" width="300" height="26.333333333333343"/>
+                                                <rect key="frame" x="8" y="129.33333333333331" width="300" height="26.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -175,7 +175,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0K-Yj-oyJ" userLabel="IMDB Score">
-                                                <rect key="frame" x="0.0" y="171.66666666666669" width="300" height="20.333333333333343"/>
+                                                <rect key="frame" x="8" y="163.66666666666669" width="300" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -184,7 +184,7 @@
                                                 </variation>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-0U-vDv">
-                                                <rect key="frame" x="0.0" y="200" width="300" height="150"/>
+                                                <rect key="frame" x="8" y="192" width="300" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="ATJ-7m-Prv"/>
@@ -202,6 +202,12 @@
                                             <constraint firstAttribute="width" constant="300" id="ngw-J9-WPI"/>
                                             <constraint firstItem="XsW-Lu-XKG" firstAttribute="top" relation="lessThanOrEqual" secondItem="Wq8-AQ-TzB" secondAttribute="top" constant="8" id="oOY-hl-R66"/>
                                         </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ngw-J9-WPI"/>
+                                            </mask>
+                                        </variation>
                                         <variation key="heightClass=compact-widthClass=regular" spacing="4"/>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYe-Q5-Ldb">
@@ -289,13 +295,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                             </imageView>
                             <stackView opaque="NO" alpha="0.80000001192092896" contentMode="center" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t4e-F4-usf">
-                                <rect key="frame" x="64" y="186" width="300" height="350"/>
+                                <rect key="frame" x="56" y="186" width="316" height="350"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CgX-FS-tEx">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="131.66666666666666"/>
+                                        <rect key="frame" x="8" y="8.0000000000000071" width="300" height="115.66666666666669"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoI-2Q-YCV" userLabel="Film Name">
-                                        <rect key="frame" x="0.0" y="139.66666666666669" width="300" height="24"/>
+                                        <rect key="frame" x="8" y="131.66666666666669" width="300" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -304,7 +310,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqj-Ih-DAZ" userLabel="IMDB Score">
-                                        <rect key="frame" x="0.0" y="171.66666666666669" width="300" height="20.333333333333343"/>
+                                        <rect key="frame" x="8" y="163.66666666666669" width="300" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -313,7 +319,7 @@
                                         </variation>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSF-QP-SLy">
-                                        <rect key="frame" x="0.0" y="200" width="300" height="150"/>
+                                        <rect key="frame" x="8" y="192" width="300" height="150"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Mrv-G4-uM2"/>
@@ -330,9 +336,14 @@
                                     <constraint firstAttribute="height" constant="350" id="5j3-Tv-epS"/>
                                     <constraint firstItem="yoI-2Q-YCV" firstAttribute="top" secondItem="CgX-FS-tEx" secondAttribute="bottom" constant="8" id="BGp-vw-h5c"/>
                                     <constraint firstItem="Kqj-Ih-DAZ" firstAttribute="top" secondItem="yoI-2Q-YCV" secondAttribute="bottom" constant="8" id="Ejy-vj-ZHG"/>
-                                    <constraint firstItem="CgX-FS-tEx" firstAttribute="top" relation="lessThanOrEqual" secondItem="t4e-F4-usf" secondAttribute="top" constant="8" id="UQm-by-9ZY"/>
                                     <constraint firstAttribute="width" constant="300" id="ekU-if-exe"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ekU-if-exe"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=regular" spacing="4"/>
                             </stackView>
                         </subviews>
@@ -354,6 +365,7 @@
                         <outlet property="filmDescription" destination="CSF-QP-SLy" id="bKh-Ne-DAw"/>
                         <outlet property="filmDirector" destination="Kqj-Ih-DAZ" id="ehz-Ww-aA1"/>
                         <outlet property="filmPoster" destination="CgX-FS-tEx" id="p9g-8q-mVc"/>
+                        <outlet property="mainStackView" destination="t4e-F4-usf" id="QVY-CT-v2c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWf-Dz-YVO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

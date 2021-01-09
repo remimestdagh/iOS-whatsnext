@@ -23,17 +23,9 @@ class FilmCardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getNextFilms(skip: "0")
-        mainStackView.layer.cornerRadius = 10
+        mainStackView.layer.cornerRadius = 15
         mainStackView.layer.cornerCurve = .continuous
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-
-      //  self.currentFilm = self.films[0]
-        //setImage(from: currentFilm!.titleImage)
-        super.viewDidAppear(animated)
-    }
-
     func getNextFilms(skip: String) {
         Network.shared.getNextFilms(skip: skip) { [self] films in
             self.films = films
@@ -64,28 +56,18 @@ class FilmCardViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
         super.viewDidLoad()
-
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeGesture(gestureRecognizer: )))
-
         self.SwipeView.addGestureRecognizer(swipeGesture)
-        print(films.count)
-
     }
 
     @objc func swipeGesture(gestureRecognizer: UIPanGestureRecognizer) { let labelPoint =
         gestureRecognizer.translation(in: view)
 
         SwipeView.center = CGPoint(x: view.bounds.width/2 + labelPoint.x, y: view.bounds.height/2 + labelPoint.y)
-
-        // set up the the positon and the CGAffineTransform
         let xFromCenter = view.bounds.width / 2 - SwipeView.center.x
-
         var rotation = CGAffineTransform(rotationAngle: xFromCenter/200)
-
         let scale = min(100/abs(xFromCenter), 1)
-
         var scaleAndRotated = rotation.scaledBy(x: scale, y: scale)
 
         SwipeView.transform = scaleAndRotated
@@ -120,13 +102,9 @@ class FilmCardViewController: UIViewController {
                 }
 
             }
-            // resume the positon and the CGAffineTransform
             rotation = CGAffineTransform(rotationAngle: 0)
-
             scaleAndRotated = rotation.scaledBy(x: 1, y: 1)
-
             SwipeView.transform = scaleAndRotated
-
             SwipeView.center = CGPoint(x: view.bounds.width/2, y: view.bounds.height/2)
 
         }
