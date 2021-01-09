@@ -1,5 +1,6 @@
 import Foundation
 
+/// enum contraining frequent errors
 enum EvaluateError: Error {
     case isEmpty
     case isNotValidEmailAddress
@@ -8,6 +9,7 @@ enum EvaluateError: Error {
     case tooLong
     case tooShort
 }
+
 extension EvaluateError: LocalizedError {
     var errorDescription: String? {
         switch self {
@@ -46,6 +48,7 @@ extension EvaluateError: LocalizedError {
     }
 }
 
+/// validations for register functionality
 struct Validations {
     static func validate(username: String) throws {
         guard username.count > 1 else {

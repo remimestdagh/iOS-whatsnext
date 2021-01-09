@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// struct for film
 struct Film {
 
     var id: Int

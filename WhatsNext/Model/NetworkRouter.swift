@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// network router to predefine api calls, ensures expandablity
 enum NetworkRouter {
     case fetchFavourites
     case login(login: Login)

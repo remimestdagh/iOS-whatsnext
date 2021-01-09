@@ -183,7 +183,6 @@
 				E9A1EEF62557D7CA0056B786 /* SceneDelegate.swift */,
 				E93EE4282556F1BF003133FD /* Resources */,
 				E93EE4232556F150003133FD /* Controllers */,
-				E93EE4222556F14C003133FD /* View */,
 				E93EE3F92556E990003133FD /* Model */,
 				E9D7C5852556B8E900644AF9 /* AuthRequestInterceptor.swift */,
 				E915474425580AE000BAE527 /* NetworkLogger.swift */,
@@ -225,14 +224,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E93EE4222556F14C003133FD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E93EE4272556F1B0003133FD /* Cells */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E93EE4232556F150003133FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,13 +235,6 @@
 				E99FCAFB2596884F00051338 /* TheTabBarViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E93EE4272556F1B0003133FD /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E93EE4282556F1BF003133FD /* Resources */ = {

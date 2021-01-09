@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// struct to pass to login
 struct Login: Encodable {
     let email: String
     let password: String

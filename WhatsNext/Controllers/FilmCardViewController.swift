@@ -33,6 +33,7 @@ class FilmCardViewController: UIViewController {
         //setImage(from: currentFilm!.titleImage)
         super.viewDidAppear(animated)
     }
+
     func getNextFilms(skip: String) {
         Network.shared.getNextFilms(skip: skip) { [self] films in
             self.films = films

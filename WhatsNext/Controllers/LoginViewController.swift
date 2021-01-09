@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    /// Provides network functionality
     private var network: Network = Network()
     override func viewDidLoad() {
 
@@ -33,10 +34,10 @@ class LoginViewController: UIViewController {
     firstNameTextField.isHidden = true
     lastNameTextField.isHidden = true
     errorLabel.isHidden = true
-
-    initializeData()
   }
 
+    /// Listener for want to register button, shows more textfields when users need to register
+    /// - Parameter sender: sender
     @IBAction func didTapNeedAccountButton(_ sender: Any) {
         if registerActive {
             registerButton.isHidden = true
@@ -58,6 +59,8 @@ class LoginViewController: UIViewController {
 
     }
 
+    /// Listener for register button
+    /// - Parameter sender: sender
     @IBAction func didTapRegisterButton(_ sender: Any) {
 
         do {
@@ -95,11 +98,9 @@ class LoginViewController: UIViewController {
         }
 
     }
-    private func initializeData() {
 
-  }
-
-  // MARK: - IBAction
+    /// Listener for login button
+    /// - Parameter sender: object that sent it
   @IBAction func didTapSignInButton(_ sender: Any) {
     let login: Login = Login(email: userNameField.text!, password: passwordField.text!)
     var loggedin = false
@@ -122,6 +123,10 @@ class LoginViewController: UIViewController {
 
   }
 
+    /// Shows popup message when something goes wrong during login
+    /// - Parameters:
+    ///   - isSuccess: indicated whether the message will be an error or success message
+    ///   - optionalMessage: custom message content
     func showPopup(isSuccess: Bool, optionalMessage: String = "") {
       let successMessage = "Congratulations! You logged in successully. Welcome, "+optionalMessage
       let errorMessage = "Something went wrong. Please try again. "+optionalMessage

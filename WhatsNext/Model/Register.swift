@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// struct to pass paramters to register method
 struct Register: Encodable {
     let email: String
     let password: String

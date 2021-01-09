@@ -9,7 +9,11 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    /// Show different view when user is logged in or isn't
+    /// - Parameters:
+    ///   - scene: new scene
+    ///   - session: current session
+    ///   - connectionOptions: extra session options
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -57,6 +61,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    /// Adds animation when changing screens
+    /// - Parameters:
+    ///   - viewc: new viewcontroller
+    ///   - animated: display animation?
     func changeRootViewController(_ viewc: UIViewController, animated: Bool = true) {
         guard let window = self.window else {
                 return

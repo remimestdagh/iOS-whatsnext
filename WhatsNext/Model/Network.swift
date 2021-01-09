@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+/// incorperates networkrouter, logger, interceptor to provide api functionality
 class Network {
     let sessionManager: Session = {
       let configuration = URLSessionConfiguration.af.default

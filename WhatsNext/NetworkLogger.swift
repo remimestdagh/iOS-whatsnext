@@ -8,8 +8,8 @@
 import Foundation
 import Alamofire
 
+/// provides logging functionality to api, prints objects in console
 class NetworkLogger: EventMonitor {
-  let queue = DispatchQueue(label: "com.raywenderlich.gitonfire.networklogger")
 
   func requestDidFinish(_ request: Request) {
     print(request.description)

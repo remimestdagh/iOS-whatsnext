@@ -8,6 +8,8 @@ class TokenManager {
     return SecureStore(secureStoreQueryable: accessTokenQueryable)
   }()
 
+    /// saves accesstoken
+    /// - Parameter authToken: the token
   func saveAccessToken(authToken: String) {
     if authToken=="" {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
@@ -21,6 +23,8 @@ class TokenManager {
     }
   }
 
+    /// fetches accesstoken from storage
+    /// - Returns: the token
   func fetchAccessToken() -> String? {
     do {
       return try secureStore.getValue(for: userAccount)
@@ -30,6 +34,7 @@ class TokenManager {
     return nil
   }
 
+    /// removes access token
   func clearAccessToken() {
     do {
       return try secureStore.removeValue(for: userAccount)

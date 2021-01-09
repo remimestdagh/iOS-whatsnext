@@ -6,6 +6,7 @@
 //
 
 import Foundation
+/// struct to store user information
 struct User {
   var username: String?
   var password: String?

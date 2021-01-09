@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// View that's shown after a film is selected from the tableview
 class FilmDetailViewController: UIViewController {
     var film: Film!
     @IBOutlet weak var filmPoster: UIImageView!
@@ -21,6 +22,8 @@ class FilmDetailViewController: UIViewController {
         filmDirector.text = self.film!.regisseur
         filmDescription.text = self.film!.description
     }
+    /// sets image from url
+    /// - Parameter url: url of image
     func setImage(from url: String) {
         guard let imageURL = URL(string: url) else { return }
         DispatchQueue.global().async {
