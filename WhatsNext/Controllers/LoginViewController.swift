@@ -7,7 +7,7 @@
 import UIKit
 import Foundation
 /// view controller for the login view
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     var registerActive: Bool = false
     var labelActive: Bool = false
     @IBOutlet weak var errorLabel: UILabel!
@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
 
     super.viewDidLoad()
+        self.userNameField.delegate = self
+        self.passwordField.delegate = self
+        self.confirmPasswordField.delegate = self
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
 
   }
 
@@ -36,6 +41,10 @@ class LoginViewController: UIViewController {
     lastNameTextField.isHidden = true
     errorLabel.isHidden = true
   }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           self.view.endEditing(true)
+           return false
+       }
 
     /// Listener for want to register button, shows more textfields when users need to register
     /// - Parameter sender: sender
