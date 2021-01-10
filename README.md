@@ -4,6 +4,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Credentials for testing](#credentials)
 
 ### General info
 This project was made for HoGent. 
@@ -25,6 +26,10 @@ To run this project, clone project and:
 $ cd ../iOS-whatsnext
 $ pod install
 ```
+
+### Credentials
+- student@hogent.be
+- P@ssword123
 
 ### Created & maintained by
 Remi Mestdagh
