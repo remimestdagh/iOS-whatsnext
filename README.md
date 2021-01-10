@@ -26,6 +26,7 @@ To run this project, clone project and:
 $ cd ../iOS-whatsnext
 $ pod install
 ```
+Backend is at: https://github.com/remimestdagh/Movierecommendations-BE
 
 ### Credentials
 - student@hogent.be
