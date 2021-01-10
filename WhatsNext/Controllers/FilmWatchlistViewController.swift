@@ -39,11 +39,21 @@ class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
 
     }
 
+    /// enables the use of a cancel button in the searchbar to close the keyboard and empty the filter
+    /// - Parameter searchBar: <#searchBar description#>
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
+        filteredFilms = films
+        tableView.reloadData()
+    }
     /// filter function for the search bar
     /// - Parameters:
     ///   - searchBar: the searchbar
     ///   - searchText: the filter string
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBar.showsCancelButton = true
         if searchText == "" {
 
             filteredFilms = films

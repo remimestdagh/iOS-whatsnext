@@ -1,12 +1,12 @@
 import Foundation
 
+/// predefines frequent keychain errors
 enum SecureStoreError: Error {
   case stringToDataConversionError
   case dataToStringConversionError
   case unhandledError(message: String)
 }
 
-// MARK: - LocalizedError
 extension SecureStoreError: LocalizedError {
   var errorDescription: String? {
     switch self {

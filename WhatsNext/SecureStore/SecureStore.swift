@@ -1,6 +1,8 @@
 import Foundation
 import Security
+// SOURCE: https://www.raywenderlich.com/11496196-how-to-secure-ios-user-data-keychain-services-and-biometrics-with-swiftui#toc-anchor-003
 
+/// Struct to provide keychain storage of password and jwt tokens
 struct SecureStore {
   let secureStoreQueryable: SecureStoreQueryable
 

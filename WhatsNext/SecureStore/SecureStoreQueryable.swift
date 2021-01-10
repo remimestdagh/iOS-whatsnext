@@ -1,5 +1,6 @@
 import Foundation
 
+/// defines a query in dictionary form to browse the securestore
 protocol SecureStoreQueryable {
   var query: [String: Any] { get }
 }
@@ -14,13 +15,11 @@ struct GenericPasswordQueryable {
   }
 }
 
-// MARK: - SecureStoreQueryable
 extension GenericPasswordQueryable: SecureStoreQueryable {
   var query: [String: Any] {
     var query: [String: Any] = [:]
     query[String(kSecClass)] = kSecClassGenericPassword
     query[String(kSecAttrService)] = service
-    // Access group if target environment is not simulator
     #if !targetEnvironment(simulator)
     if let accessGroup = accessGroup {
       query[String(kSecAttrAccessGroup)] = accessGroup

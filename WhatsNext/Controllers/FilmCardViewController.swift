@@ -19,6 +19,7 @@ class FilmCardViewController: UIViewController {
     var currentIndex: Int = 0
     var films: [Film] = []
     var currentFilm: Film?
+
     //methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -116,6 +117,9 @@ class FilmCardViewController: UIViewController {
         self.currentIndex+=1
         self.IVMessage.isHidden = false
         self.currentFilm = self.films[self.currentIndex+1]
+        if self.currentFilm == nil {
+            getNextFilms(skip: "")
+        }
         self.LBLFilmTitle.text = self.currentFilm?.titel
         self.LBLScore.text = self.currentFilm?.regisseur
         self.LBLDescription.text = self.currentFilm?.description
