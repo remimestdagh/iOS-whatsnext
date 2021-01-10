@@ -19,20 +19,20 @@ class FilmCardViewController: UIViewController {
     var currentIndex: Int = 0
     var films: [Film] = []
     var currentFilm: Film?
+    var currentSkip: Int = 0
 
     //methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getNextFilms(skip: "0")
+        self.getNextFilms(skip: currentSkip)
         mainStackView.layer.cornerRadius = 15
         mainStackView.layer.cornerCurve = .continuous
     }
-    func getNextFilms(skip: String) {
+    func getNextFilms(skip: Int) {
         Network.shared.getNextFilms(skip: skip) { [self] films in
             self.films = films
             if !films.isEmpty {
                 self.currentFilm = films[0]
-                self.currentIndex+=1
                 setImage(from: self.currentFilm!.titleImage)
                 LBLFilmTitle.text=self.currentFilm?.titel
                 LBLScore.text = self.currentFilm?.regisseur
@@ -116,10 +116,13 @@ class FilmCardViewController: UIViewController {
         hideImageAfterTime(time: 2, imageView: self.IVMessage)
         self.currentIndex+=1
         self.IVMessage.isHidden = false
-        self.currentFilm = self.films[self.currentIndex+1]
-        if self.currentFilm == nil {
-            getNextFilms(skip: "")
+
+        if self.currentIndex == self.films.endIndex {
+            getNextFilms(skip: 0)
+            self.currentIndex = 0
         }
+
+        self.currentFilm = self.films[self.currentIndex]
         self.LBLFilmTitle.text = self.currentFilm?.titel
         self.LBLScore.text = self.currentFilm?.regisseur
         self.LBLDescription.text = self.currentFilm?.description

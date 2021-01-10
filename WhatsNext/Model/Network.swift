@@ -114,9 +114,9 @@ class Network {
 
         }
     }
-    func getNextFilms(skip: String, completion: @escaping ([Film]) -> Void) {
+    func getNextFilms(skip: Int, completion: @escaping ([Film]) -> Void) {
         sessionManager.request(
-            NetworkRouter.getNextFilms(skip) as
+            NetworkRouter.getNextFilms(String(skip)) as
                 URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
