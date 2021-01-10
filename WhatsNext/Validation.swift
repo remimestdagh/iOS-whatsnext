@@ -8,6 +8,8 @@ enum EvaluateError: Error {
     case invalidCharacter
     case tooLong
     case tooShort
+    case passwordMismatch
+    case passwordNotStrong
 }
 
 extension EvaluateError: LocalizedError {
@@ -44,6 +46,10 @@ extension EvaluateError: LocalizedError {
                 "Email is not valid",
                 comment: ""
             )
+        case .passwordMismatch:
+            return NSLocalizedString("Passwords don't match!", comment: "")
+        case .passwordNotStrong:
+            return NSLocalizedString("Password must contain a special character,a lowercase letter, a capital, a number and must be at least 8 characters long", comment: "")
         }
     }
 }
@@ -65,6 +71,15 @@ struct Validations {
             }
         }
     }
+    static func validatePassword(password: String, password2: String) throws {
+        guard password == password2 else {
+            throw EvaluateError.passwordMismatch
+        }
+        if isValid(input: password, regEx: passwordRegex, predicateFormat: "SELF MATCHES[c] %@") == false {
+            throw EvaluateError.passwordNotStrong
+        }
+    }
+    private static let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
     private static let emailRegEx = "(?:[a-zA-Z0-9!#$%\\&‘*+/=?\\^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%\\&'*+/=?\\^_`{|}"
         + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
         + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"

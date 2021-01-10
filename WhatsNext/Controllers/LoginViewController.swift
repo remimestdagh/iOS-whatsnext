@@ -68,6 +68,7 @@ class LoginViewController: UIViewController {
             try Validations.validate(username: firstNameTextField.text!)
             try Validations.email(userNameField.text!)
             try Validations.validate(username: lastNameTextField.text!)
+            try Validations.validatePassword(password: passwordField.text!, password2: confirmPasswordField.text!)
 
         } catch {
             errorLabel.isHidden = false

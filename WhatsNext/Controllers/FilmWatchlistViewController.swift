@@ -11,6 +11,7 @@ import UIKit
 class FilmCell: UITableViewCell {
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var yearLbl: UILabel!
 }
 /// View controller of watchlist
 class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
@@ -96,6 +97,7 @@ class FilmWatchlistViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         cell.titleLbl.text = filteredFilms[indexPath.row].titel
+        cell.yearLbl.text = String(filteredFilms[indexPath.row].year)
         return cell
     }
 
