@@ -12,10 +12,13 @@ import UIKit
 class FilmDetailViewController: UIViewController {
     var film: Film!
     @IBOutlet weak var filmPoster: UIImageView!
+    @IBOutlet weak var filmScore: UILabel!
+    @IBOutlet weak var filmYear: UILabel!
     @IBOutlet weak var filmName: UILabel!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var filmDirector: UILabel!
     @IBOutlet weak var filmDescription: UITextView!
+    @IBOutlet weak var filmRuntime: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         mainStackView.layer.cornerRadius = 15
         mainStackView.layer.cornerCurve = .continuous
@@ -24,8 +27,11 @@ class FilmDetailViewController: UIViewController {
         super.viewDidLoad()
         setImage(from: self.film!.titleImage)
         filmName.text = self.film!.titel
-        filmDirector.text = self.film!.regisseur
+        filmDirector.text = "Director: \(self.film!.regisseur)"
         filmDescription.text = self.film!.description
+        filmYear.text = "Release date: \(self.film!.year)"
+        filmScore.text = "Score: \(self.film!.score)"
+        filmRuntime.text = "Runtime: \(self.film!.runtime) minutes"
     }
     /// sets image from url
     /// - Parameter url: url of image

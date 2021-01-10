@@ -19,12 +19,12 @@ class FilmCardViewController: UIViewController {
     var currentIndex: Int = 0
     var films: [Film] = []
     var currentFilm: Film?
-    var currentSkip: Int = 0
+    let defaultSkip: Int = 0
 
     //methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getNextFilms(skip: currentSkip)
+        self.getNextFilms(skip: defaultSkip)
         mainStackView.layer.cornerRadius = 15
         mainStackView.layer.cornerCurve = .continuous
     }
@@ -118,7 +118,7 @@ class FilmCardViewController: UIViewController {
         self.IVMessage.isHidden = false
 
         if self.currentIndex == self.films.endIndex {
-            getNextFilms(skip: 0)
+            getNextFilms(skip: defaultSkip)
             self.currentIndex = 0
         }
 
