@@ -42,7 +42,7 @@ class Network {
     method: .post,
     parameters: login,
     encoder: JSONParameterEncoder.default).validate().responseString { [self] response in
-        debugPrint(response)
+
         switch response.result {
 
         case .success(let data):
@@ -50,9 +50,9 @@ class Network {
             self.saveAccessCode(accessCode: data)
             completion(true)
 
-        case .failure(let error):
+        case .failure:
             UserDefaults.standard.set(false, forKey: "isLoggedIn")
-            print(error)
+
             completion(false)
 
         }
@@ -66,7 +66,6 @@ class Network {
     method: .post,
     parameters: register,
     encoder: JSONParameterEncoder.default).validate().responseString { [self] response in
-        debugPrint(response)
         switch response.result {
 
         case .success(let data):
@@ -74,9 +73,8 @@ class Network {
             self.saveAccessCode(accessCode: data)
             completion(true)
 
-        case .failure(let error):
+        case .failure:
             UserDefaults.standard.set(false, forKey: "isLoggedIn")
-            print(error)
             completion(false)
 
         }
@@ -92,10 +90,10 @@ class Network {
             NetworkRouter.fetchFavourites as URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                 guard let films = response.value
                 else {
-                    print("mislukt")
+
                     return completion([])
             }
-                print("gelukt")
+
                 completion(films)
         }
 
@@ -106,10 +104,10 @@ class Network {
                 URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
-                        print("mislukt")
+
                         return completion([])
                     }
-                    print("gelukt")
+
                     completion(films)
 
         }
@@ -120,10 +118,10 @@ class Network {
                 URLRequestConvertible).validate().responseDecodable(of: [Film].self) { response in
                     guard let films = response.value
                     else {
-                        print("mislukt")
+
                         return completion([])
                     }
-                    print("gelukt")
+
                     completion(films)
     }
   }

@@ -16,7 +16,7 @@ class FilmFavouritesViewController: UITableViewController {
     /// logout button, returns to login screen
     /// - Parameter sender: the logout button
     @IBAction func didPressLogoutButton(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
         UserDefaults.standard.synchronize()
 
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -41,7 +41,6 @@ class FilmFavouritesViewController: UITableViewController {
             self.films = films
             loadingIndicator.stopAnimating()
             tableView.reloadData()
-            print(self.films.count)
         }
     }
 
