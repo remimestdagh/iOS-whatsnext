@@ -13,8 +13,8 @@ class FilmFavouritesViewController: UITableViewController {
     var currentFilm: Film?
     let loadingIndicator = UIActivityIndicatorView(style: .large)
 
-    /// logout button
-    /// - Parameter sender: the button sends
+    /// logout button, returns to login screen
+    /// - Parameter sender: the logout button
     @IBAction func didPressLogoutButton(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()

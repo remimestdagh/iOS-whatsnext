@@ -41,6 +41,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     lastNameTextField.isHidden = true
     errorLabel.isHidden = true
   }
+    /// Listener to make sure keyboard closes when return is pressed on the keyboard
+    /// - Parameter textField: the textfield
+    /// - Returns: false
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
            self.view.endEditing(true)
            return false
